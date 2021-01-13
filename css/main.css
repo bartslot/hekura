@@ -1,0 +1,581 @@
+@use "sass:map";
+#logo {
+  width: 560px;
+  height: 710px;
+  overflow: visible;
+}
+
+#logo g {
+  -webkit-transform-origin: center !important;
+          transform-origin: center !important;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body, html {
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+@font-face {
+  font-family: 'gab';
+  src: url("../assets/font/gabrwffr-webfont.woff2") format("woff2"), url("../assets/font/gabrwffr-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body.scene1 {
+  background-color: #68829e;
+}
+
+.content-centered {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+}
+
+.nightsky {
+  position: relative;
+  z-index: 0;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(5, 15, 26, 0)), color-stop(60%, #050f1a)), url("../assets/img/stars.jpg");
+  background-image: linear-gradient(180deg, rgba(5, 15, 26, 0) 0%, #050f1a 60%), url("../assets/img/stars.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #050F1A;
+}
+
+.text {
+  height: 4vh;
+}
+
+#clouds {
+  width: 100vw;
+  height: 100vh;
+  background: -webkit-gradient(linear, left top, left bottom, from(#050F1A), color-stop(20%, #050F1A), color-stop(64%, #2E3D51), to(rgba(104, 130, 158, 0)));
+  background: linear-gradient(180deg, #050F1A 0%, #050F1A 20%, #2E3D51 64%, rgba(104, 130, 158, 0) 100%);
+}
+
+.image {
+  position: relative;
+  display: block;
+}
+
+.image, .cloud, .moon {
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-size: contain;
+  position: absolute;
+  display: block;
+}
+
+.cloud0 {
+  -webkit-transform: translate(toString("10vw"), toString("-15vw"));
+          transform: translate(toString("10vw"), toString("-15vw"));
+  display: inline-block;
+  background: url("../assets/img/sprites/clouds.png") no-repeat;
+  overflow: hidden;
+  text-indent: -9999px;
+  text-align: left;
+}
+
+.cloud1 {
+  -webkit-transform: translate(toString("20vw"), toString("-4vw"));
+          transform: translate(toString("20vw"), toString("-4vw"));
+  display: inline-block;
+  background: url("../assets/img/sprites/clouds.png") no-repeat;
+  overflow: hidden;
+  text-indent: -9999px;
+  text-align: left;
+}
+
+.cloud2 {
+  -webkit-transform: translate(toString("97vw"), toString("-1vw"));
+          transform: translate(toString("97vw"), toString("-1vw"));
+  display: inline-block;
+  background: url("../assets/img/sprites/clouds.png") no-repeat;
+  overflow: hidden;
+  text-indent: -9999px;
+  text-align: left;
+}
+
+.cloud3 {
+  -webkit-transform: translate(toString("70vw"), toString("-2vw"));
+          transform: translate(toString("70vw"), toString("-2vw"));
+  display: inline-block;
+  background: url("../assets/img/sprites/clouds.png") no-repeat;
+  overflow: hidden;
+  text-indent: -9999px;
+  text-align: left;
+}
+
+.cloud4 {
+  -webkit-transform: translate(toString("96vw"), toString("-10vw"));
+          transform: translate(toString("96vw"), toString("-10vw"));
+  display: inline-block;
+  background: url("../assets/img/sprites/clouds.png") no-repeat;
+  overflow: hidden;
+  text-indent: -9999px;
+  text-align: left;
+}
+
+.cloud5 {
+  -webkit-transform: translate(toString("96vw"), toString("-12vw"));
+          transform: translate(toString("96vw"), toString("-12vw"));
+  display: inline-block;
+  background: url("../assets/img/sprites/clouds.png") no-repeat;
+  overflow: hidden;
+  text-indent: -9999px;
+  text-align: left;
+}
+
+.cloud6 {
+  -webkit-transform: translate(toString("14vw"), toString("-17vw"));
+          transform: translate(toString("14vw"), toString("-17vw"));
+  display: inline-block;
+  background: url("../assets/img/sprites/clouds.png") no-repeat;
+  overflow: hidden;
+  text-indent: -9999px;
+  text-align: left;
+}
+
+.cloud7 {
+  -webkit-transform: translate(toString("8vw"), toString("-17vw"));
+          transform: translate(toString("8vw"), toString("-17vw"));
+  display: inline-block;
+  background: url("../assets/img/sprites/clouds.png") no-repeat;
+  overflow: hidden;
+  text-indent: -9999px;
+  text-align: left;
+}
+
+.cloud8 {
+  -webkit-transform: translate(toString("53vw"), toString("-5vw"));
+          transform: translate(toString("53vw"), toString("-5vw"));
+  display: inline-block;
+  background: url("../assets/img/sprites/clouds.png") no-repeat;
+  overflow: hidden;
+  text-indent: -9999px;
+  text-align: left;
+}
+
+.cloud9 {
+  -webkit-transform: translate(toString("93vw"), toString("-15vw"));
+          transform: translate(toString("93vw"), toString("-15vw"));
+  display: inline-block;
+  background: url("../assets/img/sprites/clouds.png") no-repeat;
+  overflow: hidden;
+  text-indent: -9999px;
+  text-align: left;
+}
+
+.cloud10 {
+  -webkit-transform: translate(toString("92vw"), toString("-13vw"));
+          transform: translate(toString("92vw"), toString("-13vw"));
+  display: inline-block;
+  background: url("../assets/img/sprites/clouds.png") no-repeat;
+  overflow: hidden;
+  text-indent: -9999px;
+  text-align: left;
+}
+
+.cloud11 {
+  -webkit-transform: translate(toString("72vw"), toString("-18vw"));
+          transform: translate(toString("72vw"), toString("-18vw"));
+  display: inline-block;
+  background: url("../assets/img/sprites/clouds.png") no-repeat;
+  overflow: hidden;
+  text-indent: -9999px;
+  text-align: left;
+}
+
+.cloud12 {
+  -webkit-transform: translate(toString("48vw"), toString("-19vw"));
+          transform: translate(toString("48vw"), toString("-19vw"));
+  display: inline-block;
+  background: url("../assets/img/sprites/clouds.png") no-repeat;
+  overflow: hidden;
+  text-indent: -9999px;
+  text-align: left;
+}
+
+.cloud13 {
+  -webkit-transform: translate(toString("81vw"), toString("-1vw"));
+          transform: translate(toString("81vw"), toString("-1vw"));
+  display: inline-block;
+  background: url("../assets/img/sprites/clouds.png") no-repeat;
+  overflow: hidden;
+  text-indent: -9999px;
+  text-align: left;
+}
+
+.cloud14 {
+  -webkit-transform: translate(toString("19vw"), toString("-6vw"));
+          transform: translate(toString("19vw"), toString("-6vw"));
+  display: inline-block;
+  background: url("../assets/img/sprites/clouds.png") no-repeat;
+  overflow: hidden;
+  text-indent: -9999px;
+  text-align: left;
+}
+
+.cloud1 {
+  background-position: -277px -287px;
+  width: 165px;
+  height: 109px;
+}
+
+.cloud2 {
+  background-position: -277px -287px;
+  width: 165px;
+  height: 109px;
+}
+
+.cloud3 {
+  background-position: -277px -287px;
+  width: 165px;
+  height: 109px;
+}
+
+.cloud4 {
+  background-position: -277px -287px;
+  width: 165px;
+  height: 109px;
+}
+
+.cloud5 {
+  background-position: -277px -287px;
+  width: 165px;
+  height: 109px;
+}
+
+.cloud6 {
+  background-position: -1px -287px;
+  width: 275px;
+  height: 119px;
+}
+
+.cloud7 {
+  background-position: -1px -287px;
+  width: 275px;
+  height: 119px;
+}
+
+.cloud8 {
+  background-position: -1px -287px;
+  width: 275px;
+  height: 119px;
+}
+
+.cloud9 {
+  background-position: -1px -0px;
+  width: 500px;
+  height: 286px;
+}
+
+.cloud10 {
+  background-position: -1px -0px;
+  width: 500px;
+  height: 286px;
+}
+
+.cloud11 {
+  background-position: -1px -0px;
+  width: 500px;
+  height: 286px;
+}
+
+.cloud12 {
+  background-position: -1px -0px;
+  width: 500px;
+  height: 286px;
+}
+
+.cloud13 {
+  background-position: -1px -0px;
+  width: 500px;
+  height: 286px;
+}
+
+.cloud14 {
+  background-position: -1px -0px;
+  width: 500px;
+  height: 286px;
+}
+
+.cloud15 {
+  background-position: -1px -0px;
+  width: 500px;
+  height: 286px;
+}
+
+.layer1 {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#617b96), color-stop(60%, #6d8096));
+  background-image: linear-gradient(180deg, #617b96 0%, #6d8096 60%);
+  -webkit-mask-image: url("../assets/SVG/layer-1.svg");
+          mask-image: url("../assets/SVG/layer-1.svg");
+  z-index: 1;
+}
+
+.layer2 {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#5e7791), color-stop(60%, #68829e));
+  background-image: linear-gradient(180deg, #5e7791 0%, #68829e 60%);
+  -webkit-mask-image: url("../assets/SVG/layer-2.svg");
+          mask-image: url("../assets/SVG/layer-2.svg");
+  z-index: 2;
+}
+
+.layer3 {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#4e6378), color-stop(60%, #68829e));
+  background-image: linear-gradient(180deg, #4e6378 0%, #68829e 60%);
+  -webkit-mask-image: url("../assets/SVG/layer-3.svg");
+          mask-image: url("../assets/SVG/layer-3.svg");
+  z-index: 3;
+}
+
+.layer4 {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#405161), color-stop(60%, #68829e));
+  background-image: linear-gradient(180deg, #405161 0%, #68829e 60%);
+  -webkit-mask-image: url("../assets/SVG/layer-4.svg");
+          mask-image: url("../assets/SVG/layer-4.svg");
+  z-index: 4;
+}
+
+.layer1 {
+  height: 930px;
+}
+
+.layer-4 {
+  background-image: url("../assets/img/layer-4.png");
+}
+
+.layer-5:after {
+  display: block;
+  content: "";
+  width: 100%;
+  height: 100vh;
+  background: black;
+  z-index: 0;
+  position: absolute;
+  top: 80%;
+}
+
+.layer {
+  min-height: 600px;
+}
+
+.layer {
+  background-position: bottom center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 800px;
+  z-index: -1;
+  will-change: transform;
+  position: absolute;
+  bottom: 0;
+}
+
+.moon {
+  height: 500px;
+  width: 500px;
+  -webkit-transform: translate(10%, -25vh);
+          transform: translate(10%, -25vh);
+  background-image: url("../assets/img/moon.png");
+  z-index: 0;
+}
+
+.layer6 {
+  height: 500px;
+  width: 500px;
+  -webkit-transform: translate(50%, -25vh);
+          transform: translate(50%, -25vh);
+  background-image: url("../assets/img/feest1.png");
+  z-index: 1;
+}
+
+.start {
+  min-height: 100vh;
+  position: relative;
+  top: 0;
+  z-index: 2;
+  background: transparent;
+}
+
+.grunge {
+  background-size: cover;
+  background-position-y: bottom;
+  width: 100%;
+  top: 0;
+  position: absolute;
+  height: 100vh;
+  opacity: 0;
+  background-image: url("../assets/img/scene1-bg.jpg");
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  opacity: 1;
+  background: #050F1A;
+}
+
+.logo {
+  background: url("../assets/SVG/hekuralogo.svg");
+  background-repeat: no-repeat;
+  height: 400px;
+  width: 300px;
+  opacity: 0;
+  color: transparent;
+}
+
+h2 {
+  text-align: center;
+  font-family: 'gab';
+  font-size: 4em;
+  margin: 0;
+  position: relative;
+  top: 50%;
+}
+
+h2 > span {
+  display: block;
+  font-size: .3em;
+}
+
+.paragraph, p {
+  font-family: ComicNeue-Light;
+  text-align: left;
+}
+
+.content-centered {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+section {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+#dark {
+  height: 300vh;
+  background: black;
+}
+
+.dark {
+  position: relative;
+  color: white;
+  text-align: left;
+}
+
+.w50 {
+  width: 50vw;
+}
+
+.w60 {
+  width: 60vw;
+}
+
+.w70 {
+  width: 70vw;
+}
+
+p {
+  font-size: 1.5rem;
+}
+
+.dance-animation-wrapper, .fire-wrapper {
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  position: absolute;
+}
+
+.fire-wrapper {
+  width: 290px;
+  height: 233px;
+  overflow: hidden;
+  position: absolute;
+}
+
+.dance-wrapper-1 {
+  bottom: 75%;
+  left: 710px;
+}
+
+.dance-wrapper-2 {
+  bottom: 75%;
+  left: 590px;
+}
+
+.dance-wrapper-3 {
+  bottom: 73%;
+  left: 250px;
+}
+
+.fire-wrapper {
+  z-index: 0;
+  bottom: 20%;
+  left: 630px;
+}
+
+.dance-wrapper-4 {
+  bottom: 72%;
+  left: 471px;
+}
+
+.dance-animation0 {
+  background-repeat: no-repeat;
+  background-size: 300%;
+  background-image: url("../assets/img/sprites/danceAnimations.png");
+  background-position-y: 0;
+  background-position-x: 0;
+}
+
+.dance-animation1 {
+  background-repeat: no-repeat;
+  background-size: 300%;
+  background-image: url("../assets/img/sprites/danceAnimations.png");
+  background-position-y: 0;
+  background-position-x: 0;
+}
+
+.dance-animation2 {
+  background-repeat: no-repeat;
+  background-size: 300%;
+  background-image: url("../assets/img/sprites/danceAnimations.png");
+  background-position-y: 0;
+  background-position-x: 0;
+}
+
+.dance-animation3 {
+  background-repeat: no-repeat;
+  background-size: 300%;
+  background-image: url("../assets/img/sprites/danceAnimations.png");
+  background-position-y: 0;
+  background-position-x: 0;
+}
+/*# sourceMappingURL=main.css.map */

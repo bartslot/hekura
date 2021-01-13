@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSAP</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="scene1">
+    <section class="nightsky content-centered" id="map">
+        <svg id="logo" height="100%" width="100%">
+            <g id="logo-inner" fill="#fff">
+                <g class="logo-subtitle-wrapper">
+                    <path class="logo-subtitle"
+                        d="m145 571.55c-.5-.29-4.68.24-2.41-2 .46-3.78 1-11-1.07-15 11.57-7.55 20.61 15.21 3.48 17zm-.18-5.43c-1 13.46 17.8-11 0-10.72 0 4.28.03 6.28-.01 10.72z" />
+                    <path class="logo-subtitle"
+                        d="m169.4 562c-1.85 1.76-.51 1.11-6 1.38 0 4.85 1.63 6.35 7 7.86-1.54 1-8.44 2.23-9.24-5.7-1.75-3.46 4-17.61 8.07-10.8-2.78-.11-5.3-.32-5.85 7.38.87-.51 4.51-.93 6.02-.12z" />
+                    <path class="logo-subtitle" 
+                        d="m185 559.12c-6.58-8.12 17.51-7.62 4.5 1.68 12.75 3.2-9.21 22.97-4.5-1.68zm1.6 9c-1.32 1.43 6.26 2 5-3.07-.41-.33-5.98-7.77-5 3.02zm.63-7.51c8.1-.89-.87-13.07-.34-.3a3.45 3.45 0 0 0 .34.25z" />
+                    <path class="logo-subtitle"
+                        d="m208.27 562c-1.84 1.76-.5 1.11-6 1.38 0 4.85 1.64 6.35 7 7.86-1.53 1-8.43 2.23-9.24-5.7-1.74-3.46 4-17.61 8.08-10.8-2.79-.11-5.3-.32-5.86 7.38.88-.51 4.52-.93 6.02-.12z" />
+                    <path class="logo-subtitle"
+                        d="m215.25 559.64c-5.13-13.87 20.16-2 3.93 3.35-2.69 1.13 9.95-8.39-1.67-7.5-1.27 1 1.82 19.19-2.47 16 .62-4.14.19-6.35.21-11.85z" />
+                    <path class="logo-subtitle"
+                        d="m233.89 552.8c2.71-.73 11.39 3.69 1.71 8.87 2.89.74 31.62 21.63-2.55 1.05 1 7.48-3.2 17.56-1.9-4.11.26-2.2-2.43-5.86 2.74-5.81zm-.76 7.94c1.76-.32 5.81-1.78 4-5.76-3.2-1.79-4.51.02-4 5.76z" />
+                    <path class="logo-subtitle"
+                        d="m249.85 560.08c9-20.21 23.82 17.06 1.62 8.62-1.3-2.81-2.71-1.57-1.62-8.62zm2 4.08c1.8 11 17.58-1.86 4.75-8-.13.84-5.18-1.7-4.8 8z" />
+                    <path class="logo-subtitle"
+                        d="m277.18 562c-1.84 1.76-.5 1.11-6 1.38 0 4.85 1.64 6.35 7 7.86-1.53 1-8.43 2.23-9.24-5.7-1.74-3.46 4-17.61 8.08-10.8-2.79-.11-5.3-.32-5.86 7.38.84-.51 4.52-.93 6.02-.12z" />
+                    <path class="logo-subtitle"
+                        d="m280.81 553.64c2.5-1.28 3.41.66 9 14.3 7.11-16.54 15.79-20.75-.56 3.36-1.84-4.17-6.52-12.75-8.44-17.66z" />
+                    <path class="logo-subtitle" 
+                        d="m303 559.51c.16-14.43 3.87 1.8 1.8 11.77-1.96 1.98-1.8-2.37-1.8-11.77z" />
+                    <path class="logo-subtitle"
+                        d="m313.65 559.1c-5.2-12.39 3.66-1.14 11.56 7.13-1.63-10.79 6.29-21.18.34 4.33-2.49-2.67-2.64-4.83-10.3-12 1.2 1.96-3.33 27.44-1.6.54z" />
+                    <path class="logo-subtitle"
+                        d="m345.28 565.09c1.11-1.91 3.33 7.53.57 8.58-.87-1 0-4.06-3.66-2.82-12.94 2.12-8-23.78 5.55-15.63-16.07-3.09-12.63 24.68-2.46 9.87z" />
+                    <path class="logo-subtitle"
+                        d="m359.17 553.64c2.5-1.28 3.41.66 9 14.3 7.11-16.54 15.79-20.76-.57 3.36-1.84-4.17-6.51-12.75-8.43-17.66z" />
+                    <path class="logo-subtitle"
+                        d="m382.81 566.75c-11.19 11.58 2.16-1.7 1-9.43-.83-1.67-6.51-4-.94-4.53 0 .48 27.91 30 9.6 13.68-3.22.19-6.63-.41-9.66.28zm1.47-3.28c-1.68 1.94 1.15 1.95 6.69 1.38l-4.71-4.8z" />
+                    <path class="logo-subtitle"
+                    d="m404.25 559.1c-5.2-12.39 3.66-1.14 11.56 7.13-1.63-10.78 6.29-21.19.33 4.33-2.49-2.67-2.63-4.83-10.29-12 1.2 1.96-3.34 27.44-1.6.54z" />
+                </g>
+                <g class="logo-title-wrapper">
+                    <path class="logo-title"
+                    d="m145.11 632.3c-9.1-.7-9.1-.5-18.2-1.3 22.24-43.5-8.51-41.76-15.25-29.7-12 32.16 4.68 39.66-35 38.7-34-2-19.56-20.57-31.95-40.65-29.71-20.16-22.54 17.26-14.1 31.65-53.76-.91-26.47 25.08 4.15 21 9.55 14.67 3.28 39.08 7.16 56.08 38.08 21.43 19.21-39.08 19.39-52.18a314.63 314.63 0 0 0 34.9 0c-2.69 21.16-14.51 75.17 20 50.68 2.89-19.94-2.84-38.28 6.57-54.58 34.11 3.59 45.83-19.23 22.33-19.7z" />
+                    <path class="logo-title"
+                        d="m217.61 646.56c-35.31 9.85-78 2.91-74.4 29.7 14.28 4.43 51-17.68 57.6.15-4.58 10.91-38.35 25.17-54 26.75-46.35 8.14-15.1-54.13-2.51-87.72-.57-8.76 40.3-14.1 52 2-1 14.08-47-7-43.5 22.65 9.57 1.57 77.74-9.5 64.81 6.47z" />
+                    <path class="logo-title"
+                        d="m285.26 641.76c-1.8 9.83-36.19 21.12-48.9 27.3 7.75 4.2 58.85 7.72 37.5 24.15-8.5.31-39.85-7.7-49.35-11.55-2.65 6.45-7 18.48-12.15 33.75-27.36 16.93 17.64-100.06 23.53-101.93 21.91-11.45 2.56 30.67 0 39.08 12.92-2.01 48.78-35.51 49.37-10.8z" />
+                    <path class="logo-title" 
+                        d="m352.91 616c-25.78 109.8-94.27 118.62-70.5-7.35 39.07-8.91 3.42 52.92 10.41 64.53 14 33.39 42.23-55.09 46.44-68.43h7.05q6.6 6.56 6.6 11.25z" />
+                    <path class="logo-title" 
+                        d="m438.71 624.51q-1.21 19.05-31.8 22.65c52.64 30.44 29.37 52.07 26.41 44-32.24-43.92-103.18-24-15.76-60.46-4.69-6.1-38.42 7.46-42.29 12.55-6.4 9.56-14.45 77-31.51 63.35-1.6-20.49 12.15-43.9 17.4-64.2a36.83 36.83 0 0 1 -7.5-2.85c-.39-.83 1.6-8.06 2.1-9.9 7.36 0 11.44-12.14 19.14-10.61 17.8 4.39 60.1-21.29 63.81 5.47z" />
+                    <path class="logo-title"
+                        d="m553.75 652.86c-1.81 14.24-11.48 14.72-23.69 12.75-4 51.46-30.1 48-17.41 1.35-73.9 2.39-52 47.92-80.6 33-12.56-10.44 37.52-48.68 54.72-65.3 41.35-38.74 54.32-41.23 46.29 15.77 3.68.9 18.5-2.26 20.69 2.43zm-38.85-4.35c-.61-10.65 3.21-17.59-6.59-19.8-6.23 4.45-16 17.36-22.81 25.65z" />
+                </g>
+                <path class="logo-inner-element"
+                        d="m271.17 150.3c-133.49 4.7-116.38 170.57-23.06 183.1 134.78 12.17 162.82-171.4 23.06-183.1zm37.12 96.76c-8.92 14.63-2.43 32.61-6.53 49.78-33.48 19.56-16.88-34.49-17.06-46.32a273.72 273.72 0 0 1 -31 0c2.28 19.58 13.36 64.76-17.57 45.75-2.8-15.07 2.16-36.42-6-49.21-27.19 3.62-51.44-19.47-3.68-18.66-7.5-12.78-13.87-46 12.48-28.11 11 17.84-1.82 34.33 28.38 36.11 35.3.85 20.5-5.81 31.14-34.38 6-10.71 33.31-12.25 13.54 26.38 45.09-1.03 27.36 21.29-3.7 18.66z" />
+                <path class="logo-inner-element"
+                        d="m118.62 204.12c-46.5-85.12-38.53-63.59 41.77-70.32-2.06-94.21-.8-75.46 68.5-39.89 48.6-81.74 37.14-65.84 80.78-.41 83-45.2 66.08-39.35 67.92 40.75 98.08 0 76.12.36 42.62 69.89 81.25 48.52 65.78 37.77-.55 80.45 46.41 82.44 39.39 66.33-40.94 68.12 1 98.71 1 75.9-69.21 42.62-48 81.52-37.84 64.93-80.56-.37-83 46.52-66.44 38.71-68.39-42.27-91.65 2.27-82.14 3-41-67.41-82.27-49.59-67.89-37.04-.94-81.16zm141.92 173.33c177.85-11.58 191.92-258.45 8-264.89-185.63 15.19-164.84 258.04-8 264.89zm50.9 7.14c18 15.65 34.29 26.17 55.53 29-28.74-56.52-21.63-48.74-55.53-29zm126.09-40c.43-1.42.86-2.84 1.28-4.26-36.58-20.28-48.95-38.54-58.53 4.21 18.16 6.79 39.6 4.33 57.25.08zm-201.73 44.13c7.86 20.6 16.52 38 33.54 50.74 3.91-58.19 6.58-50.46-33.54-50.74zm-11.72-283.56c-8.08-14.56-38.78-31.48-54.08-29.23l25.11 43.24zm77.75-6.45c-7.06-19.21-15-36.93-34.21-52.57 2.47 52.68-12.85 60.51 34.21 52.57zm111.75 176.06c16.66.1 47.15-19.19 50.33-32.48-50.4.28-44.91-6.64-50.33 32.48zm-44.08-198.77-4.07-1.24-23.5 39.6 27.75 22c5.76-21.97 5.08-41.2-.18-60.36zm-297.16 164.45 1.71 6c54.05-.66 47.07 7.63 47.31-32.31l-3.92-2zm340.13-41.31c13.25-16.27 23.41-32 27.6-50.84-.9-1-1.8-1.93-2.71-2.89l-40.66 23.1zm-271.38 121.55c-4.92-11.37-9-20.87-13.94-32.18-13.59 17.11-25 32.58-28.92 56.58zm-3.41-150c7.51-8.82 14.49-17 23-27.05-21.86-4.14-41.07-5.8-63.54 3.06zm30 185c-3.16 21-4.31 39.42 1.43 57.49l3.91.9 23.21-39.08z" />
+                <g class="from-middle">
+                    <path class="anim"
+                        d="m314.36 80.54c-26.63-61.54-6.65-42.26 28.37-75.6 9.71 16.07-20.3 25.94-21.66 35.63-2.19 12.99 15.49 33.27-6.71 39.97z" />
+                    <path class="anim"
+                        d="m390.2 125.07c7.26-68.84 16.33-37.74 63.33-51.72-1.41 9.81-6.69 13-17.38 14.52-43.38 2.95-9.44 38.54-45.95 37.2z" />
+                    <path class="anim"
+                        d="m433 201.45c36.37-50.45 37.8-29.93 80.47-11.45-7.44 7.05-14.32 5.81-27 .19-31.23-16.88-23.64 30.63-53.47 11.26z" />
+                    <path class="anim"
+                        d="m432.11 289.35c64.29-26.88 40.85-7 76.4 28.28-16.36 10.31-26.92-20.9-36.41-21.33-13.63-1.56-31.99 14.23-39.99-6.95z" />
+                    <path class="anim"
+                        d="m388.24 365.22c62.91 5.59 43.61 17.6 49.53 63.45-8.55-2.54-12-8.28-13-21-.31-37.67-40.15-8.19-36.53-42.45z" />
+                    <path class="anim"
+                        d="m323 488.23c-8.58-8.07-3.8-19.12 2.18-32.6 10.31-22-32.4-20.9-13.47-47.8 49.08 36.4 31.09 36 11.29 80.4z" />
+                    <path class="anim"
+                        d="m30.38 168.3c11.53-3.77 18.65 7 27.62 18.4 13.48 18.28 35.8-15.94 48.26 11.84-58.48 24.66-45.76 10.08-75.88-30.24z" />
+                    <path class="anim"
+                        d="m148.1 363c-6.64 62.16-17.47 44.89-64 49.6 1.73-7.83 8.61-11.62 15.63-12.38 47.34.35 12.7-42.62 48.37-37.22z" />
+                    <path class="anim"
+                        d="m193.63 482.52c-4.82-11.81 9.3-19.78 18.87-28.2 15.09-12.06-15.39-37.57 11.06-47.21 26.88 57.61 7.18 47.23-29.93 75.41z" />
+                    <path class="anim"
+                        d="m104.94 286.28c-36.47 50.42-36.54 31.2-79.76 11.43 5.56-6.71 12.82-5.54 23.33-1.17 35.14 18.46 26.94-30.1 56.43-10.26z" />
+                    <path class="anim"
+                        d="m150 122.65c-61.54-6.06-44.82-15-49.6-62.68 6 .21 10.39 5.26 11.41 11.14 2.03 53.13 43.53 16.51 38.19 51.54z" />
+                    <path class="anim"
+                        d="m227 79.9c-51.24-36.59-31.29-36.42-11.88-79.9 6.36 4.53 5.28 13.37 2 21.38-19.38 38.78 28.46 26.85 9.88 58.52z" />
+                </g>
+                <g class="inner-rounded"> 
+                    <path d="m231.43 469.6c57.35 5.69 55.48-3.72 74 1.42-5.91 15.58-76.2 14.12-74-1.42z" />
+                    <path
+                        d="m56.33 325.27c9.37 21.81 27.07 41.09 34.67 63.73-15.24 2-17.53-18.16-25.94-28.26-5.86-14.08-23.19-27.04-8.73-35.47z" />
+                    <path d="m122 422.24c14.85 9.48 91.86 38.65 55.11 40.19-25.98-14.53-53.64-25.71-55.11-40.19z" />
+                    <path d="m415.92 423.74c-5.26 18.33-56.2 42.91-64.95 35.48 18.21-14.92 42-23.35 61.49-38.19z" />
+                    <path
+                        d="m307 19.34c-26.71-1.69-50.62 3.72-74-2.68 7.31-13.27 32.3-4.47 44.28-6.73 12.51 1.62 22.72-4.67 29.72 9.41z" />
+                    <path d="m348.61 28.63c23.56-8.67 66.85 22.63 67.71 39.76z" />
+                    <path d="m92.91 99.37c-14 20.48-21.67 44.35-37.91 62.91-14.17-12.59 25-72.12 37.91-62.91z" />
+                    <path d="m484.78 326.29c7.6 13.69-28 69-37.71 62.95 8-21.56 25.49-40.64 34.1-62.94z" />
+                    <path
+                        d="m446.42 97.82c17.15 1.17 19.34 20.57 28.45 32.77 4.46 11.5 16.75 19.07 8 31.75-13.54-19-22.93-40.96-36.45-64.52z" />
+                    <path d="m125.62 68.84c-12.62-18.17 55.29-48.16 60.38-39.55-16.57 16.29-40.42 26-60.38 39.55z" />
+                    <path d="m494.56 279.3v-69.46c17.23-4.56 18.16 74.89 0 69.46z" />
+                    <path d="m43.33 280.82c-23.46-7.88-11.58-77.28 0-71.66z" />
+                </g>
+                <g class="inner-stars">
+                    <path d="m382 186.53c-10.51 7.14-13.18 8.65-20.51-1.23 9.24-9.68 10.05-8.01 20.51 1.23z" />
+                    <path d="m222.13 144.32c-7.11 4.38-12.33 10.72-17.59 1-1.79-12.17 10.71-12.08 17.59-1z" />
+                    <path d="m280.83 127.79c-6.79 3.85-11.46 11.21-16.29 5.26-8.94-13.05 8.14-17.05 16.29-5.26z" />
+                    <path d="m153.16 255.27c-5-7.32-11.9-10.89-3.33-17.42 11.4-4.5 12.66 9.49 3.33 17.42z" />
+                    <path d="m338.62 143c-7.41 6.36-12.75 11.34-18.27 1.53.51-11.06 9.74-10.95 18.27-1.53z" />
+                    <path d="m222.69 344.86c-8 6-13.23 10.71-18.6 1 .73-11.14 10.33-9.75 18.6-1z" />
+                    <path d="m397.26 244.12c-12.86 10.7-12.48 8.48-19.35-1.89 7.48-7.93 9.92-5.7 19.35 1.89z" />
+                    <path d="m281.23 360.74c-6.53 2.92-11.7 9.28-15.87 6-10.5-12.59 6.78-18.2 15.87-6z" />
+                    <path d="m379.53 299.73c-7.31 6.78-11.43 12.71-17.86 3-1.67-10.73 9.33-10.51 17.86-3z" />
+                    <path d="m327.75 356.44c-8.3-9.58-10.3-11.93-.65-19.7 10.15 7.58 8.9 8.83.65 19.7z" />
+                    <path d="m168.51 290.56c6.27 7.92 10.48 11.65 1.61 19.2-12.67-7.66-10.12-8.05-1.61-19.2z" />
+                    <path d="m168.77 197.25c-6.51-7.91-11.28-12.69-1.88-18.56 10.53.31 10.51 9.56 1.88 18.56z" />
+                </g>
+            </g>
+        </svg>
+    </section>
+    <section id ="clouds" class="dark" data-depth="1">
+        <h2><span>Hoofdstuk 1</span>
+            Het Feest
+        </h2>
+        
+        <div class="skyClouds">
+            <div class="image cloud cloud0" data-xPos="69"></div>
+            <div class="image cloud cloud1" data-xPos="87"></div>
+            <div class="image cloud cloud2" data-xPos="25"></div>
+            <div class="image cloud cloud3" data-xPos="99"></div>
+            <div class="image cloud cloud4" data-xPos="25"></div>
+            <div class="image cloud cloud5" data-xPos="42"></div>
+            <div class="image cloud cloud6" data-xPos="36"></div>
+            <div class="image cloud cloud7" data-xPos="77"></div>
+            <div class="image cloud cloud8" data-xPos="24"></div>
+            <div class="image cloud cloud9" data-xPos="83"></div>
+            <div class="image cloud cloud10" data-xPos="26"></div>
+            <div class="image cloud cloud11" data-xPos="48"></div>
+            <div class="image cloud cloud12" data-xPos="99"></div>
+            <div class="image cloud cloud13" data-xPos="47"></div>
+        </div>
+        <div class="image moon" data-depth="5"></div>
+    </section>
+    <section class="text">
+        <div class="paragraph content-centered">
+            <p class="w50">De jungle van de Amazone, het grootste aaneengesloten bosgebied ter wereld. 
+
+                Onder haar vochtige altijd groene bladerdek zijn nog altijd verborgen geheimen. 
+                Diep verborgen in de jungle leeft een indianenstam van wat het bos voortbrengt.</p>
+        </div>
+    </section>
+    <section id="rainForestHills">
+        <!-- <div data-depth="0.15" class="layer parallax layer1"></div> -->
+        <div data-depth="0.20" class="layer parallax layer2"></div>
+        <div data-depth="0.25" class="layer parallax layer3"></div>
+        <div data-depth="0.30" class="layer parallax layer4"></div>
+        
+        <!-- <div data-depth="0.85" class="layer parallax layer5"></div> -->
+        <div data-depth="1" class="layer parallax layer-4"></div>
+        <div data-depth="1" class="layer parallax layer-5"></div>
+    </section>
+    <section id="dark" class="dark content-centered">
+        <div class="image grunge">
+            <div class="fire-wrapper"><img class="fire" src="assets/img/sprites/fire.png"></div></div>
+            <div class="dance-animation-wrapper dance-wrapper-1"><img class="dance dance1" src="assets/img/sprites/danceAnimations.png" /></div>
+            <div class="dance-animation-wrapper dance-wrapper-2"><img class="dance dance2" src="assets/img/sprites/danceAnimations.png" /></div>
+            <div class="dance-animation-wrapper dance-wrapper-3"><img class="dance dance3" src="assets/img/sprites/danceAnimations.png" /></div>
+            <div class="dance-animation-wrapper dance-wrapper-4"><img class="dance dance4" src="assets/img/sprites/danceAnimations.png" /></div>    
+        </div>
+        
+        <div class="image flyInLeft layer6"></div>
+        <div class="image flyInRight layer6"></div>
+        <div class="image flyInLeft layer6"></div>
+        <div class="image flyInRight layer6"></div>
+    </section>
+    <!-- Library: JQUERY -->
+    <script src="https://code.jquery.com/jquery-latest.js" integrity="sha384-wciR07FV6RBcI+YEVsZy/bInxpyn0uefUp6Yi9R5r46Qv/yk/osR5nzY31koh9Uq" crossorigin="anonymous"></script>
+    <!-- Library: Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js" integrity="sha384-aeOf8PUQ30Impyyio8FDxFHefK/3nHBJWjuT1u1FnJHZU+ro9q9E9cXUzfWBk0kT" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/MotionPathPlugin.min.js" integrity="sha384-1u6ajz4aRfA/hq3k5nTDB4Ttls1SAXhHDwLFuVLf7FcwwBFBStIgtt1pgivT+P4r" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/TextPlugin.min.js" integrity="sha384-AUF6jVZ9iDxxPEzHopee7yc6UZ3bOAm1mgqZFTzNw2/FV6XWTGy7WqRMUYBlsMiB" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js" integrity="sha384-IqFDa6K9SJzsScnaQ67Y8rd0qD38ZdhpMnvvHT8HyIIo4zwrxa/YDL5edt/MmN8W" crossorigin="anonymous"></script>
+    <!-- Library: Audio -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.1/howler.min.js" integrity="sha384-13+ZAfvi15G2/inJyPYxXx3yH3uNAiXebhUIAQBA+wuyiZr9IEejTzYVu3d05/Me" crossorigin="anonymous"></script>
+    <!-- Personal JS -->
+    <script src="js/audio.js"></script>
+    <script src="js/gsap.js"></script>
+    <script src="js/stars1.js"></script>
+</body>
+</html>

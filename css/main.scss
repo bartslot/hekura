@@ -1,0 +1,375 @@
+@import 'flex', '_stars';
+
+@use "sass:map";
+@function randomNum1($min, $max) {
+    $rand: random();
+    $randomNum1: ($min + floor($rand * (($max - $min) + 1)));
+    @return $randomNum1;
+}
+@function randomNum1($min, $max) {
+    $rand: random();
+    $randomNum: ($min + floor($rand * (($max - $min) + 1)));
+    @return $randomNum;
+}
+@function randomNum2($min, $max) {
+    $rand: random();
+    $randomNum: ($min + floor($rand * (($max - $min) + 1)));
+    @return $randomNum;
+}
+@function randomNum3($min, $max) {
+    $rand: random();
+    $randomNum: ($min + floor($rand * (($max - $min) + 1)));
+    @return $randomNum;
+}
+@function randomNum4($min, $max) {
+    $rand: random();
+    $randomNum: ($min + floor($rand * (($max - $min) + 1)));
+    @return $randomNum;
+}
+@function randomNum5($min, $max) {
+    $rand: random();
+    $randomNum: ($min + floor($rand * (($max - $min) + 1)));
+    @return $randomNum;
+}
+
+$amountClouds: 15;
+$random: (
+    "1": randomNum1(.1,1),
+    "2": randomNum2(.1,1),
+    "3": randomNum3(.1,1),
+    "4": randomNum4(.1,1),
+    "5": randomNum5(.1,1)
+);
+
+$colors: ("lightsky": #9FC0E3, "midsky": #2E3D51, "darksky": #050F1A);
+$color0: rgb(104, 130, 158);
+$color1: rgba(104, 130, 158, 0);
+$color2: #2E3D51;
+$color3: #050F1A;
+$color4: #050F1A;
+$bg: (
+    "1": rgba(123, 155, 191, 0.6),
+    "2": rgba(149, 174, 204, 0.372),
+    "3": rgba(133, 153, 177, 0.269),
+    "4": rgba(65, 82, 103, 0.4),
+    "5": rgba(34, 43, 53, 0.60)
+);
+$bggradient: (
+    "1": linear-gradient(180deg, #617b96 0%, #6d8096 60%),
+    "2": linear-gradient(180deg, #5e7791 0%, #68829e 60%),
+    "3": linear-gradient(180deg, #4e6378 0%, #68829e 60%),
+    "4": linear-gradient(180deg, #405161 0%, #68829e 60%),
+    "5": linear-gradient(180deg, #0a0c0e 0%, #2b2f34 60%),
+    "6": linear-gradient(180deg, rgba(5, 15, 26, 0) 0%, rgba(5, 15, 26, 1) 60%),
+    "blackbottom": linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)),
+    "blacktop": linear-gradient(180deg, rgba(0, 0, 0, 1),rgba(0, 0, 0, 0))
+);
+$layerheight: (
+    "1": 80vh,
+    "2": 37vh,
+    "3": 35vh,
+    "4": 39vh,
+    "5": 61vh,
+);
+$logo: url("../assets/SVG/hekuralogo.svg");
+
+#logo {
+    width:560px;
+    height: 710px;
+    overflow: visible;
+    // transform: scale(.5,.5);
+    g {
+        transform-origin: center !important;
+    }
+    
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body, html {
+    padding:0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+@font-face {
+    font-family: 'gab';
+    src: url('../assets/font/gabrwffr-webfont.woff2') format('woff2'),
+         url('../assets/font/gabrwffr-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+body.scene1 {
+    background-color: $color0;
+}
+.content-centered { 
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+.nightsky {
+    position: relative;
+    z-index: 0;
+    background-image: map-get($bggradient, "6"), url('../assets/img/stars.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: $color4;
+}
+.text {
+    height: 4vh;
+}
+#clouds {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(180deg, $color4 0%, $color3 20%, $color2 64%, $color1 100%);
+}
+
+.image {
+    position: relative;
+    display: block;
+}
+.image, .cloud, .moon {
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-size: contain; 
+    position: absolute;
+    display: block;
+}
+
+@for $i from 0 through 14{
+    .cloud#{$i} {
+        $translateX: randomNum1(0,100);
+        $translateY: randomNum2(-20,0);
+        transform: translate(toString($translateX+"vw"), toString($translateY+"vw"));
+        display: inline-block; 
+        background: url('../assets/img/sprites/clouds.png') no-repeat; 
+        overflow: hidden; 
+        text-indent: -9999px; 
+        text-align: left;
+    }
+}
+@for $i from 1 through 5{
+    .cloud#{$i} {
+        $opacity: map-get($random, "4");
+        background-position: -277px -287px; width: 165px; height: 109px;
+    }
+}
+@for $i from 6 through 8{
+    .cloud#{$i} {
+        $opacity: map-get($random, "4");
+        background-position: -1px -287px; width: 275px; height: 119px;
+    }
+}
+@for $i from 9 through $amountClouds{
+    .cloud#{$i} {
+        $opacity: map-get($random, "5");
+        background-position: -1px -0px; width: 500px; height: 286px;
+    }
+}
+@for $i from 1 through 4{
+    .layer#{$i} { 
+        background-image: map-get($bggradient, "#{$i}");
+        mask-image: url('../assets/SVG/layer-#{$i}.svg');
+        // background-image: map-get($bggradient, "#{$i}"), 
+        //                 url('../assets/SVG/layer-#{$i}.svg');
+        z-index: #{$i};
+    }
+}
+.layer1 {
+    height: 930px;
+}
+.layer-4 {
+	background-image: url('../assets/img/layer-4.png');
+}
+.layer-5:after {
+    display: block;
+    content: "";
+    width: 100%;
+    height: 100vh;
+    background: black;
+    z-index: 0;
+    position: absolute;
+    top: 80%;
+}
+.layer {
+    min-height: 600px;
+}
+.layer {
+    background-position: bottom center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 800px;
+    z-index: -1;
+    will-change: transform;
+    position: absolute;
+    bottom: 0;
+}
+.moon {
+    height: 500px;
+    width: 500px;
+    transform: translate(10%, -25vh);
+    background-image: url('../assets/img/moon.png');
+    z-index: 0;
+}
+.layer6 {
+    height: 500px;
+    width: 500px;
+    transform: translate(50%, -25vh);
+    background-image: url('../assets/img/feest1.png');
+    z-index: 1;
+}
+.start {
+    min-height: 100vh;
+    position: relative;
+    top: 0;
+    z-index: 2;
+    background: transparent;
+}
+.grunge {
+    background-size: cover;
+    background-position-y: bottom;
+    width: 100%;
+    top:0;
+    position: absolute;
+    height: 100vh;
+    opacity: 0;
+    // background: black;
+    background-image: url('../assets/img/scene1-bg.jpg');
+    // background-image: url('../assets/img/grungebackground.png'), map-get($bggradient, "blacktop");
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    opacity: 1;
+    background: #050F1A;
+}
+.logo {
+    background:  $logo;
+    background-repeat: no-repeat;
+    height: 400px;
+    width: 300px;
+    opacity: 0;
+    color: transparent;
+}
+h2 {
+    text-align: center;
+    font-family: 'gab';
+    font-size: 4em;
+    margin: 0;
+    position: relative;
+    top: 50%;
+}
+h2 > span {
+    display: block;
+    font-size: .3em;
+}
+.paragraph, p {   
+    font-family: ComicNeue-Light;
+    text-align: left;
+    
+}
+.content-centered  {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+section {
+    width: 100%;;
+    height: 100vh;
+    position: relative;
+}
+#dark {
+    height: 300vh;
+    background: black;
+}
+.dark {
+    position: relative;
+    color: white;
+    text-align: left;
+}
+.w50 {
+    width: 50vw;
+}
+.w60 {
+    width: 60vw;
+}
+.w70 {
+    width: 70vw;
+}
+p {
+    font-size: 1.5rem;
+}
+$size: 300;
+$sizeFire: 290;
+.dance-animation-wrapper, .fire-wrapper {
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    position: absolute;
+}
+.fire-wrapper { 
+    width: 290px; height: 233px;
+    overflow: hidden;
+    position: absolute;
+}
+.dance-wrapper-1 { bottom: 75%; left: 710px; }
+.dance-wrapper-2 { bottom: 75%; left: 590px; }
+.dance-wrapper-3 { bottom: 73%; left: 250px; } 
+.fire-wrapper {  z-index: 0;  bottom: 20%; left: 630px; }
+.dance-wrapper-4 { bottom: 72%; left: 471px; }
+
+
+@for $i from 0 through 3{
+    .dance-animation#{$i} {
+        background-repeat:no-repeat;
+        background-size: 300%;
+        background-image: url('../assets/img/sprites/danceAnimations.png');
+        background-position-y: 0;
+        background-position-x: 0;
+    }
+}
+
+
+// Flexbox
+.row {
+    box-sizing: border-box;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -.5rem;
+    margin-left: -.5rem;
+}
+.col-xs, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-offset-0, .col-xs-offset-1, .col-xs-offset-10, .col-xs-offset-11, .col-xs-offset-12, .col-xs-offset-2, .col-xs-offset-3, .col-xs-offset-4, .col-xs-offset-5, .col-xs-offset-6, .col-xs-offset-7, .col-xs-offset-8, .col-xs-offset-9 {
+    box-sizing: border-box;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    padding-right: .5rem;
+    padding-left: .5rem;
+}
