@@ -1,4 +1,4 @@
-@import 'flex', '_stars';
+@import '_flex', '_stars';
 
 @use "sass:map";
 @function randomNum1($min, $max) {
@@ -89,7 +89,7 @@ $logo: url("../assets/SVG/hekuralogo.svg");
     margin: 0;
     box-sizing: border-box;
 }
-body, html {
+body, html, .start {
     padding:0;
     margin: 0;
     width: 100vw;
@@ -372,4 +372,16 @@ $sizeFire: 290;
     flex: 0 0 auto;
     padding-right: .5rem;
     padding-left: .5rem;
+}
+.btn-wrapper {
+    cursor: pointer;
+    position: relative;
+    left: 50%;
+    top: 50%
+}
+section.start .btn-wrapper {
+
+}
+.start {
+    
 }

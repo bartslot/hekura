@@ -8,6 +8,16 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body class="scene1">
+    <section class="fixed overlay start">         
+        <div class="btn-wrapper">
+            <svg id="btn" width="162px" height="162px" viewBox="0 0 162 162">
+                <circle class="btn-fill" fill="#FFFFFF" cx="80.5" cy="79.5" r="10.5"></circle>
+                <circle class="btn-stroke" stroke="#FFFFFF" stroke-width="3" cx="79" cy="79" r="79"></circle>
+                <circle class="btn-stroke" stroke="#FFFFFF" stroke-width="3" cx="79.5" cy="79.5" r="57.5"></circle>
+                <circle class="btn-stroke" stroke="#FFFFFF" stroke-width="3" cx="79" cy="79" r="36"></circle>
+            </svg>
+        </div>
+    </section>
     <section class="nightsky content-centered" id="map">
         <svg id="logo" height="100%" width="100%">
             <g id="logo-inner" fill="#fff">
@@ -120,6 +130,8 @@
                 </g>
             </g>
         </svg>
+
+
     </section>
     <section id ="clouds" class="dark" data-depth="1">
         <h2><span>Hoofdstuk 1</span>
@@ -187,6 +199,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.1/howler.min.js" integrity="sha384-13+ZAfvi15G2/inJyPYxXx3yH3uNAiXebhUIAQBA+wuyiZr9IEejTzYVu3d05/Me" crossorigin="anonymous"></script>
     <!-- Personal JS -->
     <script src="js/audio.js"></script>
+    <script src="js/injectSVG.js"></script>
     <script src="js/gsap.js"></script>
     <script src="js/stars1.js"></script>
 </body>

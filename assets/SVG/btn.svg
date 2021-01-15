@@ -1,0 +1,6 @@
+<svg width="162px" height="162px" viewBox="0 0 162 162">
+                <circle class="btn-fill" fill="#FFFFFF" cx="80.5" cy="79.5" r="10.5"></circle>
+                <circle class="btn-stroke" stroke="#FFFFFF" stroke-width="3" cx="79" cy="79" r="79"></circle>
+                <circle class="btn-stroke" stroke="#FFFFFF" stroke-width="3" cx="79.5" cy="79.5" r="57.5"></circle>
+                <circle class="btn-stroke" stroke="#FFFFFF" stroke-width="3" cx="79" cy="79" r="36"></circle>
+</svg>
