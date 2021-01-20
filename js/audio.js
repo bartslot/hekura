@@ -4,7 +4,7 @@ var howl = new Howl({
     html5: false,
     loop: false,
     autoUnlock: true,
-    volume: .8,
+    volume: 0, // Volume off 
     sprite: {
         intro: [0, 340000],
         gesprek: [15000, 17000],

@@ -96,6 +96,13 @@ body, html, .start {
     height: 100vh;
     overflow-x: hidden;
 }
+#mouse {
+    position: absolute;
+    z-index: 2;
+    bottom: 4%;
+    left: 50%;
+    margin-left: -28.5px;
+}
 
 @font-face {
     font-family: 'gab';
@@ -302,9 +309,10 @@ h2 > span {
     font-family: ComicNeue-Light;
     text-align: left; 
 }
-tspan {
+tspan, text {
     font-family: 'gab';
     color: black;
+    fill: black;
 }
 .content-centered  {
     display: -webkit-box;
@@ -341,7 +349,8 @@ section {
     width: 70vw;
 }
 p {
-    font-size: 1.5rem;
+    font-size: 2rem;
+    line-height: 2.5rem;
 }
 $size: 300;
 $sizeFire: 290;
@@ -416,6 +425,15 @@ $sizeFire: 290;
 }
 .btn {
     overflow: visible;
+    position: relative;
+
+}
+.btn:hover {
+        filter: blur(2);
+        cursor: pointer;
+}
+.circle.fade {
+    fill: transparent;
 }
 .data-scroll-container{
     overflow: hidden;
@@ -431,14 +449,192 @@ $sizeFire: 290;
     left: 0;
     right: 0;
     bottom: 0;
-  }
-  
-  .scroll-container {  
+}
+
+.scroll-container {  
     position: absolute;  
     overflow: hidden;
     z-index: 10;
     backface-visibility: hidden;
     transform-style: preserve-3d;
     width: 100%;
+}
+
+#comic {
+    height: 600vh;
+}
+@for $i from 1 through 5{
+    .comic#{$i} {
+        position: relative;
+        display: block;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-image: url('../assets/img/scene1-comic#{$i}.jpg');
+        background-position-y: 0;
+        background-position-x: 0;
+    }
+}
+.comic1 {
+    height: 694px;
+}
+.comic2 {
+    width: 50%;
+    height: 1110px;
+}
+.comic3 {
+    left: auto;
+    right: 0;
+    width: 50%;
+    height: 1110px;
+}
+
+.comic4 {
+    height: 695px;
+}
+.comic5 {
+    height: 2372px;
+}
+
+// Card
+
+// Base styles
+.card {
+    opacity: 0;
+    float: left;
+    padding: 0 1.7rem;
+    width: 50%;
+    .menu-content {
+      @include cf;
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      li {
+        display: inline-block;
+      }
+      a {
+        color: $white;
+      }
+      span {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        font-size: 10px;
+        font-weight: 700;
+        font-family: 'Open Sans';
+        transform: translate(-50%, 0);
+      }
+    }
+    .wrapper {
+      background-color: $white;
+      min-height: 540px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 19px 38px rgba($black, 0.3), 0 15px 12px rgba($black, 0.2);
+      &:hover {
+        .data {
+          transform: translateY(0);
+        }
+      }
+    }
+    .data {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      transform: translateY(calc(70px + 1em));
+      transition: transform 0.3s;
+      .content {
+        padding: 1em;
+        position: relative;
+        z-index: 1;
+      }
+    }
+    .author {
+      font-size: 12px;
+    }
+    .title {
+      margin-top: 10px;
+    }
+    .text {
+      height: 70px;
+      margin: 0;
+    }
+    input[type='checkbox'] {
+      display: none;
+    }
+    input[type='checkbox']:checked + .menu-content {
+      transform: translateY(-60px);
+    }
   }
-  
+.toggle-show {
+    opacity: 1;
+}
+// Cards
+.card{
+    .wrapper {
+      background: url(https://tvseriescritic.files.wordpress.com/2016/10/stranger-things-bicycle-lights-children.jpg) center / cover no-repeat;
+      &:hover {
+        .menu-content {
+          span {
+            transform: translate(-50%, -10px);
+            opacity: 1;
+          }
+        }
+      }
+    }
+    .header {
+      @include cf;
+      color: $white;
+      padding: 1em;
+      .date {
+        float: left;
+        font-size: 12px;
+      }
+    }
+    .menu-content {
+      float: right;
+      li {
+        margin: 0 5px;
+        position: relative;
+      }
+      span {
+        transition: all 0.3s;
+        opacity: 0;
+      }
+    }
+    .data {
+      color: $white;
+      transform: translateY(calc(70px + 4em));
+    }
+    .title {
+      a {
+        color: $white;
+      }
+    }
+    .button {
+      display: block;
+      width: 100px;
+      margin: 2em auto 1em;
+      text-align: center;
+      font-size: 12px;
+      color: $white;
+      line-height: 1;
+      position: relative;
+      font-weight: 700;
+      &::after {
+        content: '\2192';
+        opacity: 0;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translate(0, -50%);
+        transition: all 0.3s;
+      }
+      &:hover {
+        &::after {
+          transform: translate(5px, -50%);
+          opacity: 1;
+        }
+      }
+    }
+  }

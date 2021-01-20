@@ -858,6 +858,14 @@ body, html, .start {
   overflow-x: hidden;
 }
 
+#mouse {
+  position: absolute;
+  z-index: 2;
+  bottom: 4%;
+  left: 50%;
+  margin-left: -28.5px;
+}
+
 @font-face {
   font-family: 'gab';
   src: url("../assets/font/gabrwffr-webfont.woff2") format("woff2"), url("../assets/font/gabrwffr-webfont.woff") format("woff");
@@ -923,8 +931,8 @@ body.scene1 {
 }
 
 .cloud0 {
-  -webkit-transform: translate(toString("19vw"), toString("-18vw"));
-          transform: translate(toString("19vw"), toString("-18vw"));
+  -webkit-transform: translate(toString("87vw"), toString("-5vw"));
+          transform: translate(toString("87vw"), toString("-5vw"));
   display: inline-block;
   background: url("../assets/img/sprites/clouds.png") no-repeat;
   overflow: hidden;
@@ -933,8 +941,8 @@ body.scene1 {
 }
 
 .cloud1 {
-  -webkit-transform: translate(toString("42vw"), toString("-10vw"));
-          transform: translate(toString("42vw"), toString("-10vw"));
+  -webkit-transform: translate(toString("13vw"), toString("-4vw"));
+          transform: translate(toString("13vw"), toString("-4vw"));
   display: inline-block;
   background: url("../assets/img/sprites/clouds.png") no-repeat;
   overflow: hidden;
@@ -943,8 +951,8 @@ body.scene1 {
 }
 
 .cloud2 {
-  -webkit-transform: translate(toString("63vw"), toString("-1vw"));
-          transform: translate(toString("63vw"), toString("-1vw"));
+  -webkit-transform: translate(toString("87vw"), toString("-9vw"));
+          transform: translate(toString("87vw"), toString("-9vw"));
   display: inline-block;
   background: url("../assets/img/sprites/clouds.png") no-repeat;
   overflow: hidden;
@@ -953,8 +961,8 @@ body.scene1 {
 }
 
 .cloud3 {
-  -webkit-transform: translate(toString("68vw"), toString("-1vw"));
-          transform: translate(toString("68vw"), toString("-1vw"));
+  -webkit-transform: translate(toString("58vw"), toString("-1vw"));
+          transform: translate(toString("58vw"), toString("-1vw"));
   display: inline-block;
   background: url("../assets/img/sprites/clouds.png") no-repeat;
   overflow: hidden;
@@ -963,8 +971,8 @@ body.scene1 {
 }
 
 .cloud4 {
-  -webkit-transform: translate(toString("2vw"), toString("-5vw"));
-          transform: translate(toString("2vw"), toString("-5vw"));
+  -webkit-transform: translate(toString("86vw"), toString("0vw"));
+          transform: translate(toString("86vw"), toString("0vw"));
   display: inline-block;
   background: url("../assets/img/sprites/clouds.png") no-repeat;
   overflow: hidden;
@@ -973,8 +981,8 @@ body.scene1 {
 }
 
 .cloud5 {
-  -webkit-transform: translate(toString("76vw"), toString("-2vw"));
-          transform: translate(toString("76vw"), toString("-2vw"));
+  -webkit-transform: translate(toString("4vw"), toString("-4vw"));
+          transform: translate(toString("4vw"), toString("-4vw"));
   display: inline-block;
   background: url("../assets/img/sprites/clouds.png") no-repeat;
   overflow: hidden;
@@ -983,8 +991,8 @@ body.scene1 {
 }
 
 .cloud6 {
-  -webkit-transform: translate(toString("99vw"), toString("-9vw"));
-          transform: translate(toString("99vw"), toString("-9vw"));
+  -webkit-transform: translate(toString("72vw"), toString("-14vw"));
+          transform: translate(toString("72vw"), toString("-14vw"));
   display: inline-block;
   background: url("../assets/img/sprites/clouds.png") no-repeat;
   overflow: hidden;
@@ -993,8 +1001,8 @@ body.scene1 {
 }
 
 .cloud7 {
-  -webkit-transform: translate(toString("78vw"), toString("-3vw"));
-          transform: translate(toString("78vw"), toString("-3vw"));
+  -webkit-transform: translate(toString("35vw"), toString("-17vw"));
+          transform: translate(toString("35vw"), toString("-17vw"));
   display: inline-block;
   background: url("../assets/img/sprites/clouds.png") no-repeat;
   overflow: hidden;
@@ -1003,8 +1011,8 @@ body.scene1 {
 }
 
 .cloud8 {
-  -webkit-transform: translate(toString("68vw"), toString("-10vw"));
-          transform: translate(toString("68vw"), toString("-10vw"));
+  -webkit-transform: translate(toString("89vw"), toString("-13vw"));
+          transform: translate(toString("89vw"), toString("-13vw"));
   display: inline-block;
   background: url("../assets/img/sprites/clouds.png") no-repeat;
   overflow: hidden;
@@ -1013,8 +1021,8 @@ body.scene1 {
 }
 
 .cloud9 {
-  -webkit-transform: translate(toString("79vw"), toString("-1vw"));
-          transform: translate(toString("79vw"), toString("-1vw"));
+  -webkit-transform: translate(toString("35vw"), toString("0vw"));
+          transform: translate(toString("35vw"), toString("0vw"));
   display: inline-block;
   background: url("../assets/img/sprites/clouds.png") no-repeat;
   overflow: hidden;
@@ -1023,8 +1031,8 @@ body.scene1 {
 }
 
 .cloud10 {
-  -webkit-transform: translate(toString("25vw"), toString("-20vw"));
-          transform: translate(toString("25vw"), toString("-20vw"));
+  -webkit-transform: translate(toString("45vw"), toString("-17vw"));
+          transform: translate(toString("45vw"), toString("-17vw"));
   display: inline-block;
   background: url("../assets/img/sprites/clouds.png") no-repeat;
   overflow: hidden;
@@ -1033,8 +1041,8 @@ body.scene1 {
 }
 
 .cloud11 {
-  -webkit-transform: translate(toString("70vw"), toString("-11vw"));
-          transform: translate(toString("70vw"), toString("-11vw"));
+  -webkit-transform: translate(toString("21vw"), toString("-17vw"));
+          transform: translate(toString("21vw"), toString("-17vw"));
   display: inline-block;
   background: url("../assets/img/sprites/clouds.png") no-repeat;
   overflow: hidden;
@@ -1043,8 +1051,8 @@ body.scene1 {
 }
 
 .cloud12 {
-  -webkit-transform: translate(toString("42vw"), toString("-16vw"));
-          transform: translate(toString("42vw"), toString("-16vw"));
+  -webkit-transform: translate(toString("70vw"), toString("-16vw"));
+          transform: translate(toString("70vw"), toString("-16vw"));
   display: inline-block;
   background: url("../assets/img/sprites/clouds.png") no-repeat;
   overflow: hidden;
@@ -1053,8 +1061,8 @@ body.scene1 {
 }
 
 .cloud13 {
-  -webkit-transform: translate(toString("11vw"), toString("-3vw"));
-          transform: translate(toString("11vw"), toString("-3vw"));
+  -webkit-transform: translate(toString("69vw"), toString("-9vw"));
+          transform: translate(toString("69vw"), toString("-9vw"));
   display: inline-block;
   background: url("../assets/img/sprites/clouds.png") no-repeat;
   overflow: hidden;
@@ -1063,8 +1071,8 @@ body.scene1 {
 }
 
 .cloud14 {
-  -webkit-transform: translate(toString("6vw"), toString("-20vw"));
-          transform: translate(toString("6vw"), toString("-20vw"));
+  -webkit-transform: translate(toString("10vw"), toString("-3vw"));
+          transform: translate(toString("10vw"), toString("-3vw"));
   display: inline-block;
   background: url("../assets/img/sprites/clouds.png") no-repeat;
   overflow: hidden;
@@ -1321,9 +1329,10 @@ h2 > span {
   text-align: left;
 }
 
-tspan {
+tspan, text {
   font-family: 'gab';
   color: black;
+  fill: black;
 }
 
 .content-centered {
@@ -1375,7 +1384,8 @@ section {
 }
 
 p {
-  font-size: 1.5rem;
+  font-size: 2rem;
+  line-height: 2.5rem;
 }
 
 .dance-animation-wrapper, .fire-wrapper {
@@ -1534,5 +1544,88 @@ p {
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
   width: 100%;
+}
+
+#comic {
+  height: 600vh;
+}
+
+.comic1 {
+  position: relative;
+  display: block;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("../assets/img/scene1-comic1.jpg");
+  background-position-y: 0;
+  background-position-x: 0;
+}
+
+.comic2 {
+  position: relative;
+  display: block;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("../assets/img/scene1-comic2.jpg");
+  background-position-y: 0;
+  background-position-x: 0;
+}
+
+.comic3 {
+  position: relative;
+  display: block;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("../assets/img/scene1-comic3.jpg");
+  background-position-y: 0;
+  background-position-x: 0;
+}
+
+.comic4 {
+  position: relative;
+  display: block;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("../assets/img/scene1-comic4.jpg");
+  background-position-y: 0;
+  background-position-x: 0;
+}
+
+.comic5 {
+  position: relative;
+  display: block;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("../assets/img/scene1-comic5.jpg");
+  background-position-y: 0;
+  background-position-x: 0;
+}
+
+.comic1 {
+  height: 694px;
+}
+
+.comic2 {
+  width: 50%;
+  height: 1110px;
+}
+
+.comic3 {
+  left: auto;
+  right: 0;
+  width: 50%;
+  height: 1110px;
+}
+
+.comic4 {
+  height: 695px;
+}
+
+.comic5 {
+  height: 2372px;
 }
 /*# sourceMappingURL=main.css.map */

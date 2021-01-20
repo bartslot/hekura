@@ -44,12 +44,15 @@
             <p class="w20 light" style="padding: 4rem;">Deze webcomic gebruikt audio. Dit is een work in progress. HKU Project VRIJ III, Semester 2020-2021.<br/> 
                 Met dank aan Michelle Avis (Illustraties), Amber (Muziek), Ron Slot (Narratief).</p>
         </div>
-        <svg width="90px" height="90px" id="start" class="btn" viewBox="0 0 100 100" version="1.1">
-            <circle class="fade" stroke="#FFFFFF" stroke-width="3" cx="42.5" cy="42.5" r="42.5"></circle>
-            <circle class="fade" stroke="#FFFFFF" stroke-width="3" cx="43" cy="43" r="31"></circle>
-            <circle class="fade" stroke="#FFFFFF" stroke-width="3" cx="43" cy="43" r="19"></circle>
-            <circle class="1" fill="#FFFFFF" cx="42.5" cy="42.5" r="5.5"></circle>
-        </svg>
+        
+        <div id="start" class="btn">
+            <svg width="90px" height="90px"class="btn" viewBox="0 0 100 100" version="1.1">
+                <circle class="fade" stroke="#FFFFFF" stroke-width="3" cx="42.5" cy="42.5" r="42.5"></circle>
+                <circle class="fade" stroke="#FFFFFF" stroke-width="3" cx="43" cy="43" r="31"></circle>
+                <circle class="fade" stroke="#FFFFFF" stroke-width="3" cx="43" cy="43" r="19"></circle>
+                <circle class="1" fill="#FFFFFF" cx="42.5" cy="42.5" r="5.5"></circle>
+            </svg>
+        </div>
     </section>
     <div id="scroll-container" class="smooth-scroll">
 
@@ -165,8 +168,12 @@
                 </g>
             </g>
         </svg>
-
-
+        <svg id="mouse" width="57px" height="95px" viewBox="0 0 57 95" style="opacity: 0">
+            <g id="mouseIcon" stroke-width="5" fill="none" fill-rule="evenodd" transform="translate(-703.000000, -736.000000)" stroke="#FFFFFF" stroke-width="5">
+                <rect id="mousecontainer" x="706" y="739" width="51" height="89" rx="25.5"></rect>
+                <rect id="mouseWheel" x="730" y="757" width="3" height="9" rx="1.5"></rect>
+            </g>
+        </svg>
     </section>
     <section id ="clouds" class="dark" data-depth="1">
         <h2><span>Hoofdstuk 1</span>
@@ -209,10 +216,10 @@
         <div data-depth=".9" class="layer parallax layer-4"></div>
         <div data-depth=".9" class="layer parallax layer-5"></div>
     </section>
-    <section class="text">
+    <section class="text"style="top: -50vh">
         <div class="paragraph content-centered">
-            <p class="w50 light">Hekura, de zoon van het stamhoofd wordt vandaag 12 jaar en wordt man. Er wacht hem morgen een proef.</p>
-            <p class="w50 light">Bij het vuur in het midden van de kring van de rieten hutten, wordt een feestmaal bereid.</p>
+            <p class="w50 light">Hekura, de zoon van het stamhoofd is vandaag 12 jaar en wordt man. Er wacht hem morgen een proef.</p>
+            <p class="w50 light">Bij het vuur in het midden van de kring van de hutten, is het feest losgebarsten.</p>
             <p class="w50 light">Hekura’s stam en de gasten van naburige dorpen dansen om het vuur. Hij is opgewonden en blij, maar ook zenuwachtig. </p>
         </div>
     </section>
@@ -239,41 +246,116 @@
         </div>
     </section>
     <section id="comic" class="dark">
-        <svg width="365px" height="279px" viewBox="0 0 365 279" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <defs>
-                <path d="M177.537603,0.0288931987 C28.1529462,-2.79501102 -80.4653281,202.268158 77.7875908,224.491603 C82.3634275,225.133888 47.1038341,264.277435 33.2902243,276.746389 C33.0642127,276.950916 33.4695985,277.065738 33.7548035,276.959886 C48.4383784,271.620662 106.776261,227.096627 112.918035,227.256302 C319.198405,232.638584 368.56937,199.259462 364.804304,148.120602 C359.265228,72.8762927 328.228104,2.87791474 177.537603,0.0288931987" id="path-1"></path>
-                <filter x="-1.5%" y="-1.3%" width="103.0%" height="104.8%" filterUnits="objectBoundingBox" id="filter-2">
-                    <feMorphology radius="1.5" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
-                    <feOffset dx="0" dy="2" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
-                    <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.695722247 0" type="matrix" in="shadowOffsetOuter1"></feColorMatrix>
-                </filter>
-            </defs>
-            <g id="vaya-text1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                <g id="Scene1" transform="translate(-628.000000, -4100.000000)">
-                    <g id="VAYA" transform="translate(628.000000, 4100.000000)">
-                        <g id="Fill-1" transform="translate(182.500000, 138.500000) scale(-1, 1) translate(-182.500000, -138.500000) ">
-                            <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
-                            <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+        <div class="row">
+            <div class="image comic1"></div>
+        </div>
+        <div class="row">
+            <div class="image comic2">
+
+                <svg width="242px" height="170px" viewBox="0 0 242 170" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g id="Bubble2" transform="translate(-62.000000, -54.000000)">
+                            <path d="M181.346555,54.0307328 C66.4207627,51.8508187 7.73037775,166.310158 129.480152,183.465555 C133.001851,183.961368 105.87428,214.179631 95.2470841,223.803661 C95.0732071,223.961545 95.3850818,224.050182 95.604498,223.969855 C106.900983,219.848238 151.783326,185.476505 156.506985,185.601151 C315.20424,189.756006 303.820817,124.512313 303.820817,124.512313 C303.820817,112.98536 297.27697,56.2300362 181.346555,54.0307328" id="Fill-1" fill="#FFFFFF"></path>
+                            <text id="he" font-family="GabrielWeissFriendsFont, Gabriel Weiss' Friends Font" font-size="18" font-weight="normal" fill="#000000">
+                                <tspan x="131" y="102">Hé</tspan>
+                            </text>
+                            <text id="wat-is-er-aan-de-han" font-family="GabrielWeissFriendsFont, Gabriel Weiss' Friends Font" font-size="18" font-weight="normal" fill="#000000">
+                                <tspan x="129" y="124">wat is er aan </tspan>
+                                <tspan x="129" y="145">de hand?</tspan>
+                                <tspan x="129" y="166"></tspan>
+                            </text>
                         </g>
-                        <text id="hij-is-verdwenen" font-family="GabrielWeissFriendsFont, Gabriel Weiss' Friends Font" font-size="18" font-weight="normal" fill="#000000">
-                            <tspan x="97" y="104">hij is verdwenen</tspan>
-                        </text>
-                        <text id="Het-enige-wat-ze-vonden" font-family="GabrielWeissFriendsFont, Gabriel Weiss' Friends Font" font-size="18" font-weight="normal" fill="#000000">
-                            <tspan x="92" y="133">Het enige wat ze </tspan>
-                            <tspan x="92" y="154">vonden is zijn staf, </tspan>
-                            <tspan x="92" y="175">die nu gebroken is.</tspan>
-                        </text>
-                        <text id="Mijn-vader" font-family="GabrielWeissFriendsFont, Gabriel Weiss' Friends Font" font-size="18" font-weight="normal" fill="#000000">
-                            <tspan x="97" y="75">Mijn vader... </tspan>
-                        </text>
                     </g>
-                </g>
-            </g>
-        </svg>
-        <div class="image flyInLeft layer6"></div>
-        <div class="image flyInRight layer6"></div>
-        <div class="image flyInLeft layer6"></div>
-        <div class="image flyInRight layer6"></div>
+                </svg>
+            </div>
+            <div class="image comic3">
+            
+                <svg width="365px" height="277px" viewBox="0 0 365 277" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g id="Bubble3">
+                            <path d="M177.537603,0.0288931987 C28.1529462,-2.79501102 -80.4653281,202.268158 77.7875908,224.491603 C82.3634275,225.133888 47.1038341,264.277435 33.2902243,276.746389 C33.0642127,276.950916 33.4695985,277.065738 33.7548035,276.959886 C48.4383784,271.620662 106.776261,227.096627 112.918035,227.256302 C319.198405,232.638584 368.56937,199.259462 364.804304,148.120602 C359.265228,72.8762927 328.228104,2.87791474 177.537603,0.0288931987" id="path" fill="#FFFFFF" transform="translate(182.500000, 138.500000) scale(-1, 1) translate(-182.500000, -138.500000) "></path>
+                            <text id="3" font-family="GabrielWeissFriendsFont, Gabriel Weiss' Friends Font" font-size="18" font-weight="normal" fill="#000000">
+                                <tspan x="97" y="104">hij is verdwenen</tspan>
+                            </text>
+                            <text id="2" font-family="GabrielWeissFriendsFont, Gabriel Weiss' Friends Font" font-size="18" font-weight="normal" fill="#000000">
+                                <tspan x="92" y="133">Het enige wat ze </tspan>
+                                <tspan x="92" y="154">vonden is zijn staf, </tspan>
+                                <tspan x="92" y="175">die nu gebroken is.</tspan>
+                            </text>
+                            <text id="1" font-family="GabrielWeissFriendsFont, Gabriel Weiss' Friends Font" font-size="18" font-weight="normal" fill="#000000">
+                                <tspan x="97" y="75">Mijn vader... </tspan>
+                            </text>
+                        </g>
+                    </g>
+                </svg>    
+            </div>
+        </div>
+        <div class="row">
+            <div class="image comic4">
+                <svg width="280px" height="158px" viewBox="0 0 280 158" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g id="Bubble4" transform="translate(-32.000000, -51.000000)">
+                            <path d="M97.5054693,176.373565 C100.172683,176.749216 72.5031447,200.938796 51.630049,209 C58.8310136,209 119.154643,178.322296 123.741411,178.441661 C277.794683,182.465195 314.665659,157.513921 311.853852,119.283645 C307.715847,63.0346444 260.392021,53.1595516 147.854097,51.0297611 C36.2913972,48.9187471 -20.6815214,159.761735 97.5054693,176.373565 Z" id="bubble4" fill="#FFFFFF"></path>
+                            <text id="Kom!-We-moeten-naar" font-family="GabrielWeissFriendsFont, Gabriel Weiss' Friends Font" font-size="18" font-weight="normal" fill="#000000">
+                                <tspan x="65" y="114.5">Kom! We moeten naar </tspan>
+                                <tspan x="65" y="135.5">de Sjamaan toe!</tspan>
+                            </text>
+                            <text id="Hij-kan-ons-helpen-o" font-family="GabrielWeissFriendsFont, Gabriel Weiss' Friends Font" font-size="18" font-weight="normal" fill="#000000">
+                                <tspan x="65" y="115">Hij kan ons helpen </tspan>
+                                <tspan x="65" y="136">om je vader terug </tspan>
+                                <tspan x="65" y="157">te vinden</tspan>
+                            </text>
+                        </g>
+                    </g>
+                </svg>
+            </div>
+        </div>
+        <div class="text">
+            <div class="paragraph content-centered" style="padding: 4rem 0;">
+                <p class="w50 light">De wijze Sjamaan zit voor zijn hut, en had de kinderen al verwacht.</p>
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="image comic5 content-centered">
+                <div id="comic5-btn" class="btn">
+                    <svg width="90px" height="90px"viewBox="0 0 100 100" version="1.1">
+                        <circle class="fade" stroke="#FFFFFF" stroke-width="3" cx="42.5" cy="42.5" r="42.5"></circle>
+                        <circle class="fade" stroke="#FFFFFF" stroke-width="3" cx="43" cy="43" r="31"></circle>
+                        <circle class="fade" stroke="#FFFFFF" stroke-width="3" cx="43" cy="43" r="19"></circle>
+                        <circle class="1" fill="#FFFFFF" cx="42.5" cy="42.5" r="5.5"></circle>
+                    </svg>
+                </div>
+            </div>
+            <div id ="comic5-card" class="comic5-card card">
+                <div class="wrapper">
+                  <div class="header">
+                    <div class="date">
+                      <span class="day">12</span>
+                      <span class="month">Aug</span>
+                      <span class="year">2016</span>
+                    </div>
+                    <ul class="menu-content">
+                      <li>
+                        <a href="#" class="fa fa-bookmark-o"></a>
+                      </li>
+                      <li><a href="#" class="fa fa-heart-o"><span>18</span></a></li>
+                      <li><a href="#" class="fa fa-comment-o"><span>3</span></a></li>
+                    </ul>
+                  </div>
+                  <div class="data">
+                    <div class="content">
+                      <span class="author">Jane Doe</span>
+                      <h1 class="title"><a href="#">Stranger Things: The sound of the Upside Down</a></h1>
+                      <p class="text">The antsy bingers of Netflix will eagerly anticipate the digital release of the Survive soundtrack, out today.</p>
+                      <a href="#" class="button">Read more</a>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="fireflies"></div>
     </section>
 </div>
 </section>
@@ -285,13 +367,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/TextPlugin.min.js" integrity="sha384-AUF6jVZ9iDxxPEzHopee7yc6UZ3bOAm1mgqZFTzNw2/FV6XWTGy7WqRMUYBlsMiB" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js" integrity="sha384-IqFDa6K9SJzsScnaQ67Y8rd0qD38ZdhpMnvvHT8HyIIo4zwrxa/YDL5edt/MmN8W" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
-    
+
     <!-- Library: Audio -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.1/howler.min.js" integrity="sha384-13+ZAfvi15G2/inJyPYxXx3yH3uNAiXebhUIAQBA+wuyiZr9IEejTzYVu3d05/Me" crossorigin="anonymous"></script>
     <!-- Personal JS -->
     <script src="js/audio.js"></script>
     <script src="js/blur.js"></script>
     <script src="js/gsap.js"></script>
-    <script src="js/stars1.js"></script>
+    <script src="js/vfx.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 </body>
 </html>

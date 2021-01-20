@@ -39,6 +39,4 @@ for(var index = 1; index <= map.stars.total; index++) {
 
 
     map.obj.append(star);
-
-
 }

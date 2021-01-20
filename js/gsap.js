@@ -42,7 +42,8 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
   document.getElementById("start").addEventListener("click", startStory);
-  
+  document.getElementById("comic5-card").addEventListener("click", openCard("#comic5-card"));
+
   function startStory () {
     gsap.to("#overlay", { duration: 1, blur: 20, opacity: 0});
     
@@ -121,11 +122,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     parallax.to ("body.scene1", { backgroundColor: '#000', duration: 0}); 
     
-    clouds.to(".skyClouds", { 
-        opacity: 1,
-        x: -500,
-        duration: 15
-    });
+    clouds  .to ("#mouse", .1, {autoAlpha: 0})
+            .to(".skyClouds", { opacity: 1, x: -500, duration: 15 });
   
   
     // Muziek
@@ -165,12 +163,16 @@ document.addEventListener('DOMContentLoaded', () => {
         .from (".inner-rounded", .2, { opacity: 0, scale: 2, stagger: 0.2, transformOrigin: "bottom"})
         .from (".inner-rounded>path", .2, { opacity: 0, rotate:180, stagger: 0.1})
         
+        .to ("#mouse", .4, { delay: 4, autoAlpha: .8})
+        .to ("#mouseWheel", .2, {autoAlpha: 1, repeat: -1, repeatDelay: .4, y: 7, yoyo: true})
         // Fade to black
         // .to ("#logo-inner *", 9,{ opacity: 0, y:-500, blur: 2, stagger: 0.1}, "-=.5")
     }
 })
 
-
+function openCard(thisCard) {
+    $(thisCard).toggleClass( "toggle-show" )
+}
 // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll. 
 ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
 
