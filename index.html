@@ -3,21 +3,56 @@
 <head>
     
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>GSAP</title>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+    
 </head>
 <body class="scene1">
-    <section class="fixed overlay start">         
-        <div class="btn-wrapper">
-            <svg id="btn" width="162px" height="162px" viewBox="0 0 162 162">
-                <circle class="btn-fill" fill="#FFFFFF" cx="80.5" cy="79.5" r="10.5"></circle>
-                <circle class="btn-stroke" stroke="#FFFFFF" stroke-width="3" cx="79" cy="79" r="79"></circle>
-                <circle class="btn-stroke" stroke="#FFFFFF" stroke-width="3" cx="79.5" cy="79.5" r="57.5"></circle>
-                <circle class="btn-stroke" stroke="#FFFFFF" stroke-width="3" cx="79" cy="79" r="36"></circle>
-            </svg>
+<div class="hidden">
+    <script type="text/javascript">
+        <!--//--><![CDATA[//><!--
+            var images = new Array()
+            function preload() {
+                for (i = 0; i < preload.arguments.length; i++) {
+                    images[i] = new Image()
+                    images[i].src = preload.arguments[i]
+                }
+                console.log("all images are preloaded");
+            }
+            preload(
+                "../hekura/assets/img/sprites/clouds.png",
+                "../hekura/assets/img/layer-4.png",
+                "../hekura/assets/img/layer-7.png",
+                "../hekura/assets/SVG/layer-1.svg",
+                "../hekura/assets/SVG/layer-2.svg",
+                "../hekura/assets/SVG/layer-3.svg",
+                "../hekura/assets/img/moon.png",
+                "../hekura/assets/img/feest1.png",
+                "../hekura/assets/img/scene1-bg.jpg",
+                "../hekura/assets/img/sprites/danceAnimations.png"
+            )
+        //--><!]]>
+    </script>
+</div>
+<section class="viewport">
+    <section id="overlay" class="overlay content-centered">     
+        
+        <h2 class="light">Hekura</h2>
+        <div class="paragraph content-centered">
+            <p class="w20 light" style="padding: 4rem;">Deze webcomic gebruikt audio. Dit is een work in progress. HKU Project VRIJ III, Semester 2020-2021.<br/> 
+                Met dank aan Michelle Avis (Illustraties), Amber (Muziek), Ron Slot (Narratief).</p>
         </div>
+        <svg width="90px" height="90px" id="start" class="btn" viewBox="0 0 100 100" version="1.1">
+            <circle class="fade" stroke="#FFFFFF" stroke-width="3" cx="42.5" cy="42.5" r="42.5"></circle>
+            <circle class="fade" stroke="#FFFFFF" stroke-width="3" cx="43" cy="43" r="31"></circle>
+            <circle class="fade" stroke="#FFFFFF" stroke-width="3" cx="43" cy="43" r="19"></circle>
+            <circle class="1" fill="#FFFFFF" cx="42.5" cy="42.5" r="5.5"></circle>
+        </svg>
     </section>
+    <div id="scroll-container" class="smooth-scroll">
+
     <section class="nightsky content-centered" id="map">
         <svg id="logo" height="100%" width="100%">
             <g id="logo-inner" fill="#fff">
@@ -146,13 +181,13 @@
             <div class="image cloud cloud4" data-xPos="25"></div>
             <div class="image cloud cloud5" data-xPos="42"></div>
             <div class="image cloud cloud6" data-xPos="36"></div>
-            <div class="image cloud cloud7" data-xPos="77"></div>
+            <!-- <div class="image cloud cloud7" data-xPos="77"></div>
             <div class="image cloud cloud8" data-xPos="24"></div>
             <div class="image cloud cloud9" data-xPos="83"></div>
             <div class="image cloud cloud10" data-xPos="26"></div>
             <div class="image cloud cloud11" data-xPos="48"></div>
             <div class="image cloud cloud12" data-xPos="99"></div>
-            <div class="image cloud cloud13" data-xPos="47"></div>
+            <div class="image cloud cloud13" data-xPos="47"></div> -->
         </div>
         <div class="image moon" data-depth="5"></div>
     </section>
@@ -166,28 +201,82 @@
     </section>
     <section id="rainForestHills">
         <!-- <div data-depth="0.15" class="layer parallax layer1"></div> -->
-        <div data-depth="0.20" class="layer parallax layer2"></div>
-        <div data-depth="0.25" class="layer parallax layer3"></div>
-        <div data-depth="0.30" class="layer parallax layer4"></div>
+        <div data-depth=".4" class="layer parallax layer2"></div>
+        <div data-depth=".6" class="layer parallax layer3"></div>
+        <div data-depth=".8" class="layer parallax layer4"></div>
         
         <!-- <div data-depth="0.85" class="layer parallax layer5"></div> -->
-        <div data-depth="1" class="layer parallax layer-4"></div>
-        <div data-depth="1" class="layer parallax layer-5"></div>
+        <div data-depth=".9" class="layer parallax layer-4"></div>
+        <div data-depth=".9" class="layer parallax layer-5"></div>
+    </section>
+    <section class="text">
+        <div class="paragraph content-centered">
+            <p class="w50 light">Hekura, de zoon van het stamhoofd wordt vandaag 12 jaar en wordt man. Er wacht hem morgen een proef.</p>
+            <p class="w50 light">Bij het vuur in het midden van de kring van de rieten hutten, wordt een feestmaal bereid.</p>
+            <p class="w50 light">Hekura’s stam en de gasten van naburige dorpen dansen om het vuur. Hij is opgewonden en blij, maar ook zenuwachtig. </p>
+        </div>
     </section>
     <section id="dark" class="dark content-centered">
         <div class="image grunge">
-            <div class="fire-wrapper"><img class="fire" src="assets/img/sprites/fire.png"></div></div>
+            <div class="fire-wrapper">
+                <img class="fire" src="assets/img/sprites/fire.png">
+            </div>
             <div class="dance-animation-wrapper dance-wrapper-1"><img class="dance dance1" src="assets/img/sprites/danceAnimations.png" /></div>
             <div class="dance-animation-wrapper dance-wrapper-2"><img class="dance dance2" src="assets/img/sprites/danceAnimations.png" /></div>
             <div class="dance-animation-wrapper dance-wrapper-3"><img class="dance dance3" src="assets/img/sprites/danceAnimations.png" /></div>
             <div class="dance-animation-wrapper dance-wrapper-4"><img class="dance dance4" src="assets/img/sprites/danceAnimations.png" /></div>    
-        </div>
         
+            <!-- <div data-depth=".1" class="layer parallax layer-6"></div> -->
+            <div class="layer layer-7"></div>
+            <!-- Textbubbel -->
+            
+        </div>
+    </section>
+    <section class="text">
+        <div data-content="2" class="paragraph parallax content-centered">
+            <p class="w50 light">Vaya., de dochter van het stamhoofd van de naburige stam zit stilletjes alleen.</p>
+            <p class="w50 light">Waarom danst ze niet? Wat zou er aan de hand zijn... Hekura besluit het te vragen.</p>
+        </div>
+    </section>
+    <section id="comic" class="dark">
+        <svg width="365px" height="279px" viewBox="0 0 365 279" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <defs>
+                <path d="M177.537603,0.0288931987 C28.1529462,-2.79501102 -80.4653281,202.268158 77.7875908,224.491603 C82.3634275,225.133888 47.1038341,264.277435 33.2902243,276.746389 C33.0642127,276.950916 33.4695985,277.065738 33.7548035,276.959886 C48.4383784,271.620662 106.776261,227.096627 112.918035,227.256302 C319.198405,232.638584 368.56937,199.259462 364.804304,148.120602 C359.265228,72.8762927 328.228104,2.87791474 177.537603,0.0288931987" id="path-1"></path>
+                <filter x="-1.5%" y="-1.3%" width="103.0%" height="104.8%" filterUnits="objectBoundingBox" id="filter-2">
+                    <feMorphology radius="1.5" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+                    <feOffset dx="0" dy="2" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+                    <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.695722247 0" type="matrix" in="shadowOffsetOuter1"></feColorMatrix>
+                </filter>
+            </defs>
+            <g id="vaya-text1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g id="Scene1" transform="translate(-628.000000, -4100.000000)">
+                    <g id="VAYA" transform="translate(628.000000, 4100.000000)">
+                        <g id="Fill-1" transform="translate(182.500000, 138.500000) scale(-1, 1) translate(-182.500000, -138.500000) ">
+                            <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                            <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                        </g>
+                        <text id="hij-is-verdwenen" font-family="GabrielWeissFriendsFont, Gabriel Weiss' Friends Font" font-size="18" font-weight="normal" fill="#000000">
+                            <tspan x="97" y="104">hij is verdwenen</tspan>
+                        </text>
+                        <text id="Het-enige-wat-ze-vonden" font-family="GabrielWeissFriendsFont, Gabriel Weiss' Friends Font" font-size="18" font-weight="normal" fill="#000000">
+                            <tspan x="92" y="133">Het enige wat ze </tspan>
+                            <tspan x="92" y="154">vonden is zijn staf, </tspan>
+                            <tspan x="92" y="175">die nu gebroken is.</tspan>
+                        </text>
+                        <text id="Mijn-vader" font-family="GabrielWeissFriendsFont, Gabriel Weiss' Friends Font" font-size="18" font-weight="normal" fill="#000000">
+                            <tspan x="97" y="75">Mijn vader... </tspan>
+                        </text>
+                    </g>
+                </g>
+            </g>
+        </svg>
         <div class="image flyInLeft layer6"></div>
         <div class="image flyInRight layer6"></div>
         <div class="image flyInLeft layer6"></div>
         <div class="image flyInRight layer6"></div>
     </section>
+</div>
+</section>
     <!-- Library: JQUERY -->
     <script src="https://code.jquery.com/jquery-latest.js" integrity="sha384-wciR07FV6RBcI+YEVsZy/bInxpyn0uefUp6Yi9R5r46Qv/yk/osR5nzY31koh9Uq" crossorigin="anonymous"></script>
     <!-- Library: Animations -->
@@ -195,11 +284,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/MotionPathPlugin.min.js" integrity="sha384-1u6ajz4aRfA/hq3k5nTDB4Ttls1SAXhHDwLFuVLf7FcwwBFBStIgtt1pgivT+P4r" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/TextPlugin.min.js" integrity="sha384-AUF6jVZ9iDxxPEzHopee7yc6UZ3bOAm1mgqZFTzNw2/FV6XWTGy7WqRMUYBlsMiB" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js" integrity="sha384-IqFDa6K9SJzsScnaQ67Y8rd0qD38ZdhpMnvvHT8HyIIo4zwrxa/YDL5edt/MmN8W" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
+    
     <!-- Library: Audio -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.1/howler.min.js" integrity="sha384-13+ZAfvi15G2/inJyPYxXx3yH3uNAiXebhUIAQBA+wuyiZr9IEejTzYVu3d05/Me" crossorigin="anonymous"></script>
     <!-- Personal JS -->
     <script src="js/audio.js"></script>
-    <script src="js/injectSVG.js"></script>
+    <script src="js/blur.js"></script>
     <script src="js/gsap.js"></script>
     <script src="js/stars1.js"></script>
 </body>

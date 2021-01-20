@@ -4,7 +4,7 @@ var map = {
 
     bounderies: {
         w: $("body").innerWidth(),
-        h: $("body").innerHeight() * 2
+        h: $("body").innerHeight() * 1.5
     },
 
     stars: {

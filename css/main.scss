@@ -110,8 +110,16 @@ body.scene1 {
 .content-centered { 
     display: flex;
     justify-content: center;
-    position: relative;
+    // position: relative;
 }
+.overlay {
+    position: absolute;
+    z-index: 9999;
+    background: #040418;
+    top: 0;
+}
+
+
 .nightsky {
     position: relative;
     z-index: 0;
@@ -122,11 +130,14 @@ body.scene1 {
 }
 .text {
     height: 4vh;
+    position: relative;
+    z-index: 9999;
 }
 #clouds {
     width: 100vw;
     height: 100vh;
     background: linear-gradient(180deg, $color4 0%, $color3 20%, $color2 64%, $color1 100%);
+    margin-top: -1px;
 }
 
 .image {
@@ -186,6 +197,20 @@ body.scene1 {
 .layer-4 {
 	background-image: url('../assets/img/layer-4.png');
 }
+.layer-7 {
+    background-image: url('../assets/img/layer-7.png');
+    z-index: 9 !important;
+    bottom: -1%;
+
+}
+.dance-container1 {
+    top: 50%; 
+    left: 30%;
+}
+.dance-container2 {
+    top: 60%; 
+    left: 60%;
+}
 .layer-5:after {
     display: block;
     content: "";
@@ -204,7 +229,7 @@ body.scene1 {
     background-size: contain;
     background-repeat: no-repeat;
     width: 100%;
-    height: 800px;
+    height: 1210px;
     z-index: -1;
     will-change: transform;
     position: absolute;
@@ -243,16 +268,6 @@ body.scene1 {
     background-image: url('../assets/img/scene1-bg.jpg');
     // background-image: url('../assets/img/grungebackground.png'), map-get($bggradient, "blacktop");
 }
-
-canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    opacity: 1;
-    background: #050F1A;
-}
 .logo {
     background:  $logo;
     background-repeat: no-repeat;
@@ -267,7 +282,17 @@ h2 {
     font-size: 4em;
     margin: 0;
     position: relative;
-    top: 50%;
+    // top: 50%;
+}
+button {
+    text-align: center;
+    font-family: 'gab';
+    font-size: 2em;
+    background: transparent;
+    border: 0;
+}
+.light {
+    color: white;
 }
 h2 > span {
     display: block;
@@ -275,14 +300,19 @@ h2 > span {
 }
 .paragraph, p {   
     font-family: ComicNeue-Light;
-    text-align: left;
-    
+    text-align: left; 
+}
+tspan {
+    font-family: 'gab';
+    color: black;
 }
 .content-centered  {
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
     display: -webkit-flex;
+    flex-wrap: wrap;
+    flex-direction: column;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -293,7 +323,7 @@ section {
     position: relative;
 }
 #dark {
-    height: 300vh;
+    height: 110vh;
     background: black;
 }
 .dark {
@@ -321,16 +351,20 @@ $sizeFire: 290;
     overflow: hidden;
     position: absolute;
 }
-.fire-wrapper { 
-    width: 290px; height: 233px;
+.fire-wrapper, .dance-container { 
     overflow: hidden;
     position: absolute;
 }
-.dance-wrapper-1 { bottom: 75%; left: 710px; }
-.dance-wrapper-2 { bottom: 75%; left: 590px; }
-.dance-wrapper-3 { bottom: 73%; left: 250px; } 
-.fire-wrapper {  z-index: 0;  bottom: 20%; left: 630px; }
-.dance-wrapper-4 { bottom: 72%; left: 471px; }
+.fire-wrapper {
+    width: 290px;
+    height: 233px;
+}
+.dance-wrapper-1 { transform: translate(40%, 50%) translate3d(0px, 0px, 0px); bottom: 15%; left: 710px; }
+.dance-wrapper-2 { transform: translate(40%, 50%) translate3d(0px, 0px, 0px); bottom: 13%; left: 590px; }
+.dance-wrapper-3 { transform: translate(40%, 50%) translate3d(0px, 0px, 0px); bottom: 14%; left: 250px; } 
+.fire-wrapper {  z-index: 0;  bottom: 7%; left: 630px; }
+.dance-wrapper-4 { transform: translate(40%, 50%) translate3d(0px, 0px, 0px); bottom: 15%; left: 471px; }
+
 
 
 @for $i from 0 through 3{
@@ -373,15 +407,38 @@ $sizeFire: 290;
     padding-right: .5rem;
     padding-left: .5rem;
 }
-.btn-wrapper {
+#start {
     cursor: pointer;
-    position: relative;
+    position: absolute;
     left: 50%;
-    top: 50%
+    top: 60%;
+    margin-left: -43px;
 }
-section.start .btn-wrapper {
-
+.btn {
+    overflow: visible;
 }
-.start {
-    
+.data-scroll-container{
+    overflow: hidden;
+    display: relative;
+    z-index: 999999;
 }
+.viewport {
+    overflow: hidden;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  
+  .scroll-container {  
+    position: absolute;  
+    overflow: hidden;
+    z-index: 10;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    width: 100%;
+  }
+  
