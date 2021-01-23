@@ -31,6 +31,27 @@
     $randomNum: ($min + floor($rand * (($max - $min) + 1)));
     @return $randomNum;
 }
+// Variables
+$regal-blue: #034378;
+$san-juan: #2d4e68;
+$bermuda: #77d7b9;
+$white: #fff;
+$black: #000;
+$open-sans: 'Open Sans',
+sans-serif;
+// clear-fix mixin
+@mixin cf {
+  &::before,
+  &::after {
+    content: '';
+    display: table;
+  }
+  &::after {
+    clear: both;
+  }
+}
+
+
 
 $amountClouds: 15;
 $random: (
@@ -119,6 +140,9 @@ body.scene1 {
     justify-content: center;
     // position: relative;
 }
+.content-rows {
+
+}
 .overlay {
     position: absolute;
     z-index: 9999;
@@ -146,6 +170,11 @@ body.scene1 {
     background: linear-gradient(180deg, $color4 0%, $color3 20%, $color2 64%, $color1 100%);
     margin-top: -1px;
 }
+// .skyclouds {
+//     background-image: url('../assets/img/cloud1.png');
+//     width: 100vw;
+//     height: 50vh;
+// }
 
 .image {
     position: relative;
@@ -223,20 +252,20 @@ body.scene1 {
     content: "";
     width: 100%;
     height: 100vh;
-    background: black;
+    background: $black;
     z-index: 0;
     position: absolute;
     top: 80%;
 }
 .layer {
-    min-height: 600px;
+    min-height: 60vh;
 }
 .layer {
     background-position: bottom center;
     background-size: contain;
     background-repeat: no-repeat;
     width: 100%;
-    height: 1210px;
+    max-height: 100vh;
     z-index: -1;
     will-change: transform;
     position: absolute;
@@ -271,9 +300,7 @@ body.scene1 {
     position: absolute;
     height: 100vh;
     opacity: 0;
-    // background: black;
     background-image: url('../assets/img/scene1-bg.jpg');
-    // background-image: url('../assets/img/grungebackground.png'), map-get($bggradient, "blacktop");
 }
 .logo {
     background:  $logo;
@@ -282,6 +309,9 @@ body.scene1 {
     width: 300px;
     opacity: 0;
     color: transparent;
+}
+h1,h2,h3,h4,h5, .author {
+    font-family: 'gab';
 }
 h2 {
     text-align: center;
@@ -299,7 +329,7 @@ button {
     border: 0;
 }
 .light {
-    color: white;
+    color: $white;
 }
 h2 > span {
     display: block;
@@ -311,8 +341,8 @@ h2 > span {
 }
 tspan, text {
     font-family: 'gab';
-    color: black;
-    fill: black;
+    color: $black;
+    fill: $black;
 }
 .content-centered  {
     display: -webkit-box;
@@ -332,11 +362,11 @@ section {
 }
 #dark {
     height: 110vh;
-    background: black;
+    background: $black;
 }
 .dark {
     position: relative;
-    color: white;
+    color: $white;
     text-align: left;
 }
 .w50 {
@@ -418,21 +448,15 @@ $sizeFire: 290;
 }
 #start {
     cursor: pointer;
-    position: absolute;
-    left: 50%;
-    top: 60%;
-    margin-left: -43px;
 }
 .btn {
     overflow: visible;
+    display: block;
     position: relative;
+    cursor: pointer;
+}
 
-}
-.btn:hover {
-        filter: blur(2);
-        cursor: pointer;
-}
-.circle.fade {
+circle.fade {
     fill: transparent;
 }
 .data-scroll-container{
@@ -441,6 +465,7 @@ $sizeFire: 290;
     z-index: 999999;
 }
 .viewport {
+    z-index: 99999999;
     overflow: hidden;
     position: fixed;
     height: 100%;
@@ -495,15 +520,31 @@ $sizeFire: 290;
 .comic5 {
     height: 2372px;
 }
-
+// ReadIt 
+.readIt-wrapper {
+    bottom: 25px;
+    right: 25px;
+    .readPoints {
+        font-size: 16px;
+        padding: 0 4px;
+    }
+}
 // Card
 
 // Base styles
-.card {
-    opacity: 0;
-    float: left;
-    padding: 0 1.7rem;
-    width: 50%;
+.card, .readIt-wrapper, .thumbsupWrapper {
+    display: none;
+    opacity: 1;
+    position: fixed;
+    z-index: 9999;
+}
+.card {    
+    background: #000;
+    border-radius: 1.2rem;
+    top: 2vh;
+    left: 2vw;
+    min-width: 20vw;
+    max-width: 25vw;
     .menu-content {
       @include cf;
       margin: 0;
@@ -521,17 +562,18 @@ $sizeFire: 290;
         top: 0;
         font-size: 10px;
         font-weight: 700;
-        font-family: 'Open Sans';
+        font-family: 'gab';
         transform: translate(-50%, 0);
       }
     }
     .wrapper {
-      background-color: $white;
-      min-height: 540px;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 19px 38px rgba($black, 0.3), 0 15px 12px rgba($black, 0.2);
-      &:hover {
+        background-color: $white;
+        min-height: 80vh;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 19px 38px rgba($black, 0.3), 0 15px 12px rgba($black, 0.2);
+        &:hover {
+            
         .data {
           transform: translateY(0);
         }
@@ -544,19 +586,22 @@ $sizeFire: 290;
       transform: translateY(calc(70px + 1em));
       transition: transform 0.3s;
       .content {
-        padding: 1em;
+        padding: 2em;
         position: relative;
         z-index: 1;
       }
     }
     .author {
-      font-size: 12px;
+      font-size: 24px;
     }
     .title {
       margin-top: 10px;
+      font-size: 2.5rem;
     }
-    .text {
-      height: 70px;
+    .text {  
+      padding-top: 2em;
+      font-size: 1.75rem;
+      height: 520px;
       margin: 0;
     }
     input[type='checkbox'] {
@@ -566,14 +611,25 @@ $sizeFire: 290;
       transform: translateY(-60px);
     }
   }
-.toggle-show {
-    opacity: 1;
+#bubble2,#bubble3,#bubble4,#bubble5, #comic5-btn {
+    position: relative;
 }
+#comic5-btn { top: 70%; left: 50%; }
+#bubble2{ top: 28%; left: 32%; }
+#bubble3 {
+    top: 8%;
+    left: 60%; }
+#bubble4{ top: 4%; left: 33%; }
+#bubble5{ top: 30%; left: 50%; }
+
+
 // Cards
-.card{
+.card {
     .wrapper {
-      background: url(https://tvseriescritic.files.wordpress.com/2016/10/stranger-things-bicycle-lights-children.jpg) center / cover no-repeat;
+      background: url(https://starlotushealing.com/wp-content/uploads/2020/10/shamanic-perspective.jpg) center / cover no-repeat;
+      
       &:hover {
+        background-color: rgba(0,0,0,.4);
         .menu-content {
           span {
             transform: translate(-50%, -10px);
@@ -586,10 +642,6 @@ $sizeFire: 290;
       @include cf;
       color: $white;
       padding: 1em;
-      .date {
-        float: left;
-        font-size: 12px;
-      }
     }
     .menu-content {
       float: right;
@@ -613,10 +665,11 @@ $sizeFire: 290;
     }
     .button {
       display: block;
-      width: 100px;
+      width: 100%;
       margin: 2em auto 1em;
       text-align: center;
-      font-size: 12px;
+      font-family: 'gab';
+      font-size: 20px;
       color: $white;
       line-height: 1;
       position: relative;
@@ -637,4 +690,4 @@ $sizeFire: 290;
         }
       }
     }
-  }
+}

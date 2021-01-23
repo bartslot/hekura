@@ -2,12 +2,14 @@ gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(MotionPathPlugin);
 gsap.registerPlugin(TextPlugin);
 
+
+var readPoints = 0;
 // Using Locomotive Scroll from Locomotive https://github.com/locomotivemtl/locomotive-scroll
 
-const locoScroll = new LocomotiveScroll({
-  el: document.querySelector(".smooth-scroll"),
-  smooth: true
-});
+const readIt = gsap.timeline({ paused: true });
+const locoScroll = new LocomotiveScroll({ el: document.querySelector(".smooth-scroll"), smooth: true});
+
+
 // each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
 locoScroll.on("scroll", ScrollTrigger.update);
 
@@ -32,8 +34,7 @@ function random(minNumber, maxNumber) {
   }
   
 }
-gsap.to(".btn>.fade", {repeat: -1, repeatDelay: .3, opacity: .1, yoyo: true, ease: "power1.out", stagger: .2});
-
+gsap.to(".btn>.fade", {repeat: -1, repeatDelay: .1, opacity: .1, yoyo: true, ease: "power2.out", stagger: .2});
 
 document.addEventListener('DOMContentLoaded', () => {
   const tl = gsap.timeline({
@@ -89,24 +90,20 @@ document.addEventListener('DOMContentLoaded', () => {
       scrollTrigger: {
         trigger: "#rainForestHills",
         scroller: ".smooth-scroll",
-        markers: true,
+        markers: false,
         scrub: true,
-        start:"-=100%",
-        end:"-=10%"
-      },
-      ease: "none"
-    });
-    const comic = gsap.timeline({
-      scrollTrigger: {
-        trigger: "#comic",
-        scroller: ".smooth-scroll",
-        scrub: true,
-        start:"top top",
+        start:"-=70%",
         end:"bottom"
       },
       ease: "none"
     });
+    // Comic scrolltriggers
 
+    const comic1 = gsap.timeline({ scrollTrigger: { trigger: ".comic1", scroller: ".smooth-scroll", start:"top +120%", end:"bottom", scrub: true}});
+    const comic2 = gsap.timeline({ scrollTrigger: { trigger: ".comic2", scroller: ".smooth-scroll", start:"top +120%", end:"bottom", scrub: true }});
+    const comic3 = gsap.timeline({ scrollTrigger: { trigger: ".comic3", scroller: ".smooth-scroll", start:"top +100%", end:"bottom", scrub: true }});
+    const comic4 = gsap.timeline({ scrollTrigger: { trigger: ".comic4", scroller: ".smooth-scroll", start:"top +80%", end:"bottom", scrub: true }});
+    const comic5 = gsap.timeline({ scrollTrigger: { trigger: ".comic5", scroller: ".smooth-scroll", start:"top +80%", end:"bottom", scrub: true }});
 
     // ScrollTrigger.create({
     //       trigger: "onload",
@@ -146,13 +143,27 @@ document.addEventListener('DOMContentLoaded', () => {
         .to(".fire", 2, {repeat:-1, x:-5220, blur: 2, ease: SteppedEase.config(18)},"<")
         gsap.utils.toArray(".dance").forEach(layer => { dark.to(layer,.8,{repeat:-1,x:-600, ease: SteppedEase.config(2)}, "<")})
 
-      comic
-      .from (".flyInLeft", 1, { x:-500, duration: 2})
-      .from (".flyInRight", 1, { x: 2500, duration: 2})
+      
+        // .from (".comic1", 1, { autoAlpha: 0, duration: .2})
+        comic1.from("#comic .comic1", 1,{autoAlpha:0, delay: .2})
+              .to("#comic .comic1", 1,{y:-400, x:-100, ease: "power3.inOut"},"<")
+        comic2.from("#comic .comic2", 1,{autoAlpha:0})
+                .from("#comic .comic2 svg", 1,{autoAlpha:0, delay: .3}, "<")
+                .to("#comic .comic2", 1,{y:-400, ease: "power3.inOut"},"<")
+              
+        comic3.from("#comic .comic3", 1,{autoAlpha:0, delay: 1.2})
+              .from("#comic .comic3 svg", 1,{autoAlpha:0, delay: .3})
+        // comic1.to("#comic .image",  2,{autoAlpha:1, y:20, ease: "power3.Out"}),"+=4"})
+
+      // comic2
+      // .from (".comic2", 1, { autoAlpha: 0, duration: .2})
+      // .from ("#bubble2", 1, { autoAlpha: 0, duration: .2})
+      // .from ("#bubble4", 1, { autoAlpha: 0, duration: .2})
+      // .from ("#bubble5", 1, { autoAlpha: 0, duration: .2})
   
     function logo(){
       tl.from ("#logo", 1, { x:5000, opacity: 0, scale: 1}) //inner-stars
-        .from (".logo-subtitle", .3,{ opacity: 0, y:-2, stagger: 0.1}) 
+        .from (".logo-subtitle", .3,{ opacity: 0, y:-2, stagger: 0.1})
         .from (".logo-title", 1,{ opacity: 0, y:-50, stagger: 0.1, ease:"power3.inOut"}, "-=.2")
         
         .from (".inner-stars path", 2,{ scale: 0, opacity: 0, rotate: 720, y:random(-1020,120), x:random(-1000,120), stagger: 0.1}, "-=1") 
@@ -178,3 +189,26 @@ ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
 
 // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
 ScrollTrigger.refresh();
+
+
+$('body').on("click touchstart", "#comic5-btn", function(e){
+  if (readPoints > 0) {
+    return;
+  } else {
+    $( "#comic5-card" ).toggle();
+    gsap.from("#comic5-card", 1, { blur: 20, autoAlpha: 0, ease: "power1.out"});
+    $( ".readIt-wrapper" ).toggle();
+  }
+  
+});
+$('body').on("click touchstart", "#iHaveReadIt", function(e){
+  $( "#comic5-btn" ).toggle();
+  readPoints =+1;
+  $("#readPoints").html(readPoints);
+  readIt.play(0);
+  window.setTimeout(function() {
+    $( "#comic5-card" ).toggle();
+  }, 1000);
+});
+readIt.to(".readIt-wrapper", 1,{ scale: 1.3, y:-10, rotate: 720, ease: "power3.inOut"})
+      .to(".readIt-wrapper", 1,{ scale: 1, y:0, ease: "power3.inOut"})
