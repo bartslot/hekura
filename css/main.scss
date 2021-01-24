@@ -1,6 +1,27 @@
 @import '_flex', '_stars';
-
 @use "sass:map";
+
+// Variables
+$live: true;
+$regal-blue: #034378;
+$san-juan: #2d4e68;
+$bermuda: #77d7b9;
+$textbubbles: #E4EBED;
+$white: #fff;
+$black: #000;
+$open-sans: 'Open Sans',
+sans-serif;
+// clear-fix mixin
+@mixin cf {
+  &::before,
+  &::after {
+    content: '';
+    display: table;
+  }
+  &::after {
+    clear: both;
+  }
+}
 @function randomNum1($min, $max) {
     $rand: random();
     $randomNum1: ($min + floor($rand * (($max - $min) + 1)));
@@ -31,26 +52,12 @@
     $randomNum: ($min + floor($rand * (($max - $min) + 1)));
     @return $randomNum;
 }
-// Variables
-$regal-blue: #034378;
-$san-juan: #2d4e68;
-$bermuda: #77d7b9;
-$white: #fff;
-$black: #000;
-$open-sans: 'Open Sans',
-sans-serif;
-// clear-fix mixin
-@mixin cf {
-  &::before,
-  &::after {
-    content: '';
-    display: table;
-  }
-  &::after {
-    clear: both;
-  }
+// not visible durig development
+@if not $live {
+    .viewport { 
+        display: none;
+    }
 }
-
 
 
 $amountClouds: 15;
@@ -140,17 +147,12 @@ body.scene1 {
     justify-content: center;
     // position: relative;
 }
-.content-rows {
-
-}
 .overlay {
     position: absolute;
     z-index: 9999;
     background: #040418;
     top: 0;
 }
-
-
 .nightsky {
     position: relative;
     z-index: 0;
@@ -339,11 +341,18 @@ h2 > span {
     font-family: ComicNeue-Light;
     text-align: left; 
 }
-tspan, text {
-    font-family: 'gab';
+#comic path, .light path, .dark text{
+    fill: $textbubbles;
+    color: $textbubbles;
+} 
+#comic text, .dark path, .light text {
     color: $black;
     fill: $black;
 }
+text {
+    font-family: 'gab';
+}
+
 .content-centered  {
     display: -webkit-box;
     display: -moz-box;
@@ -368,6 +377,9 @@ section {
     position: relative;
     color: $white;
     text-align: left;
+}
+.h20 {
+    height: 20vh;
 }
 .w50 {
     width: 50vw;
@@ -464,6 +476,7 @@ circle.fade {
     display: relative;
     z-index: 999999;
 }
+
 .viewport {
     z-index: 99999999;
     overflow: hidden;
@@ -486,40 +499,61 @@ circle.fade {
 }
 
 #comic {
-    height: 600vh;
+    height: 700vh;
+    display: block;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+    .flex-row {
+        align-self: center;
+        width: 100%;
+        display: flex;
+        position: relative;
+        .flex-column {
+            width: 50vw;
+            position: relative;
+        }
+    }
+    .text {
+        height: 50vh;
+    }
+    .comic1 {
+        height: 50vh;
+        width: 100vw;
+        
+    }
+    .comic2 {
+        height: 50vh;
+        width: 50vw;
+    }
+    .comic3 {
+        width: 50vw;
+        height: 50vh;
+    }
+    .comic4 {
+        width: 100vw;
+        height: 50vh;
+    }
+    .comic5 {
+        width: 100vw;
+        height: 100vh;
+    }
+    
+}
+.flex-row {
+    height: 50vh;
 }
 @for $i from 1 through 5{
     .comic#{$i} {
         position: relative;
         display: block;
-        width: 100%;
         background-repeat: no-repeat;
         background-size: contain;
         background-image: url('../assets/img/scene1-comic#{$i}.jpg');
-        background-position-y: 0;
-        background-position-x: 0;
+        background-position: center;
     }
 }
-.comic1 {
-    height: 694px;
-}
-.comic2 {
-    width: 50%;
-    height: 1110px;
-}
-.comic3 {
-    left: auto;
-    right: 0;
-    width: 50%;
-    height: 1110px;
-}
 
-.comic4 {
-    height: 695px;
-}
-.comic5 {
-    height: 2372px;
-}
 // ReadIt 
 .readIt-wrapper {
     bottom: 25px;
@@ -614,20 +648,30 @@ circle.fade {
 #bubble2,#bubble3,#bubble4,#bubble5, #comic5-btn {
     position: relative;
 }
+.bubblewrapper {
+    transform: translate(-50%, -50%);
+    position: absolute;
+    z-index: 9;
+}
+.bubblewrapper-2 {
+    top: 28%; left: 40%;
+}
+.bubblewrapper-3 {
+    top: 28%; left: 75%;
+}
+.bubblewrapper-4{ top: 25%;  left: 66%; }
 #comic5-btn { top: 70%; left: 50%; }
-#bubble2{ top: 28%; left: 32%; }
-#bubble3 {
-    top: 8%;
-    left: 60%; }
-#bubble4{ top: 4%; left: 33%; }
-#bubble5{ top: 30%; left: 50%; }
+
+// #bubble5{ top: 30%; left: 50%; }
 
 
 // Cards
 .card {
     .wrapper {
-      background: url(https://starlotushealing.com/wp-content/uploads/2020/10/shamanic-perspective.jpg) center / cover no-repeat;
-      
+        background: url(https://starlotushealing.com/wp-content/uploads/2020/10/shamanic-perspective.jpg) center / cover no-repeat;
+        -webkit-box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 19px 38px rgba(0, 0, 0, .8), inset 6px 8px 320px 320px rgba(0, 0, 0, .8);
+
       &:hover {
         background-color: rgba(0,0,0,.4);
         .menu-content {
@@ -690,4 +734,26 @@ circle.fade {
         }
       }
     }
+}
+
+#ritual {
+    #ritualPath {
+        background: $white;
+    }
+    width: 100vh;
+    width: 100vw;
+    background-color: $white;
+}
+#canvas1 {
+    border: 2px solid white;
+    position: absolute;
+    z-index: 999;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    width: 500px;
+    height: 686px;
+}
+.vfx {
+    background: black;
 }
