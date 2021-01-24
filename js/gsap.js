@@ -3,6 +3,7 @@ gsap.registerPlugin(MotionPathPlugin);
 gsap.registerPlugin(TextPlugin);
 
 var live = true;
+var jupjup = false;
 
 function random(minNumber, maxNumber) {
   if (maxNumber <= 1) {
@@ -53,11 +54,6 @@ if (live) {
   const tl = gsap.timeline({
     paused: true, 
     defaults: { duration: 3 }
-  })
-  const ritual = gsap.timeline({
-    id:"ritual",
-    paused: true,
-    defaults: { duration: 2 }
   })
   
   document.getElementById("comic5-card").addEventListener("click", openCard("#comic5-card"));
@@ -136,7 +132,7 @@ if (live) {
   const comic2 = gsap.timeline({ scrollTrigger: { trigger: ".comic2", scroller: ".smooth-scroll", start:"top +120%", end:"bottom", scrub: true }});
     
     comic2.from("#comic .comic2", 1,{autoAlpha:0})
-          .from("#comic .comic2 #bubble2", 1,{autoAlpha:0.7, delay: .3}, "<")
+          .from("#comic #bubble2", 1,{autoAlpha:0.7, delay: .3}, "<")
           .to("#comic .bubblewrapper-2", 1,{y:-400, ease: "power3.inOut"},"<")
           .to("#comic .comic2", 1,{y:-400, ease: "power2.inOut"},"<")
   const comic3 = gsap.timeline({ scrollTrigger: { trigger: ".comic3", scroller: ".smooth-scroll", start:"top +110%", end:"bottom", scrub: true }});
@@ -150,19 +146,25 @@ if (live) {
 
     comic4
         .from("#comic .bubblewrapper-4, #comic .comic4", 2,{autoAlpha:.2}, "<")
-        .from("#comic .comic4, #comic .bubblewrapper-4", 1,{ scale: 1.2, x:-100, autoAlpha:0.7,delay: .3}, "<")
-        .to("#comic .comic4, #comic .bubblewrapper-4", 1,{y:-400, ease: "power3.inOut"},"<")
+        .from("#comic .comic4, #comic .bubblewrapper-4", 1,{  x:-100}, "<")
+        .to("#comic .comic4, #comic .bubblewrapper-4", 1,{scale: 1.2, y:-400, ease: "power3.inOut"},"<")
 
-  const comic5 = gsap.timeline({ scrollTrigger: { 
-    trigger: ".comic5",
+  const ritual = gsap.timeline({ scrollTrigger: { 
+    trigger: ".ritual-row",
     scroller: ".smooth-scroll",
-    markers: false,
-    start:"top +80%",
-    end:"bottom",
+    start:"top +50%",
+    end:"bottom top",
+    // pin: true,
     scrub: true,
-    onEnter: startRitual(),
-    onLeave: stopRitual()
+    markers: true
     }});
+    ritual 
+      .add( function(){ theRitual(true) } )
+      .from('#ritual', 2,{autoAlpha:0})
+      .to('#ritual', 1,{autoAlpha:1})
+      .to('#ritual', 10,{scale:20, blur: 3},"3")
+      .add( function(){ jupjup = false; } )
+
   // comic1.to("#comic .image",  2,{autoAlpha:1, y:20, ease: "power3.Out"}),"+=4"})
 
       // comic2
@@ -192,9 +194,6 @@ if (live) {
   })
   function openCard(thisCard) {
       $(thisCard).toggleClass( "toggle-show" )
-  }
-  function startRitual(){
-    
   }
 
   $('body').on("click touchstart", "#comic5-btn", function(e){

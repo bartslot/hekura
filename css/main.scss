@@ -539,9 +539,14 @@ circle.fade {
         height: 100vh;
     }
     
+    
 }
 .flex-row {
     height: 50vh;
+}
+.comic5-row, .ritual-row {
+    height: 100vh;
+    overflow: hidden;
 }
 @for $i from 1 through 5{
     .comic#{$i} {
@@ -577,7 +582,7 @@ circle.fade {
     border-radius: 1.2rem;
     top: 2vh;
     left: 2vw;
-    min-width: 20vw;
+    min-width: 400px;
     max-width: 25vw;
     .menu-content {
       @include cf;
@@ -602,9 +607,11 @@ circle.fade {
     }
     .wrapper {
         background-color: $white;
-        min-height: 80vh;
+        min-height: 700px;
         position: relative;
         overflow: hidden;
+        border: 10px solid transparent;
+        border-image: url('../assets/img/border-img.png') 30% round;
         box-shadow: 0 19px 38px rgba($black, 0.3), 0 15px 12px rgba($black, 0.2);
         &:hover {
             
@@ -634,7 +641,7 @@ circle.fade {
     }
     .text {  
       padding-top: 2em;
-      font-size: 1.75rem;
+      font-size: 1.4rem;
       height: 520px;
       margin: 0;
     }
@@ -737,15 +744,15 @@ circle.fade {
 }
 
 #ritual {
-    #ritualPath {
-        background: $white;
-    }
-    width: 100vh;
+    height: 100vh;
     width: 100vw;
-    background-color: $white;
+    background-color: $black;
+    background-image: url('../assets/img/ritual1.png');
+    background-position: center;
+    background-size: initial;
+    display: block
 }
 #canvas1 {
-    border: 2px solid white;
     position: absolute;
     z-index: 999;
     transform: translate(-50%, -50%);
@@ -753,6 +760,9 @@ circle.fade {
     top: 50%;
     width: 500px;
     height: 686px;
+    opacity: 1;
+    mix-blend-mode: multiply;
+    
 }
 .vfx {
     background: black;

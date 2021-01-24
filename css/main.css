@@ -931,8 +931,8 @@ body.scene1 {
 }
 
 .cloud0 {
-  -webkit-transform: translate(toString("82vw"), toString("-4vw"));
-          transform: translate(toString("82vw"), toString("-4vw"));
+  -webkit-transform: translate(toString("52vw"), toString("-1vw"));
+          transform: translate(toString("52vw"), toString("-1vw"));
   display: inline-block;
   background: url("../assets/img/sprites/clouds.png") no-repeat;
   overflow: hidden;
@@ -941,8 +941,8 @@ body.scene1 {
 }
 
 .cloud1 {
-  -webkit-transform: translate(toString("84vw"), toString("-17vw"));
-          transform: translate(toString("84vw"), toString("-17vw"));
+  -webkit-transform: translate(toString("62vw"), toString("-1vw"));
+          transform: translate(toString("62vw"), toString("-1vw"));
   display: inline-block;
   background: url("../assets/img/sprites/clouds.png") no-repeat;
   overflow: hidden;
@@ -951,8 +951,8 @@ body.scene1 {
 }
 
 .cloud2 {
-  -webkit-transform: translate(toString("88vw"), toString("-3vw"));
-          transform: translate(toString("88vw"), toString("-3vw"));
+  -webkit-transform: translate(toString("88vw"), toString("-14vw"));
+          transform: translate(toString("88vw"), toString("-14vw"));
   display: inline-block;
   background: url("../assets/img/sprites/clouds.png") no-repeat;
   overflow: hidden;
@@ -961,8 +961,8 @@ body.scene1 {
 }
 
 .cloud3 {
-  -webkit-transform: translate(toString("97vw"), toString("-7vw"));
-          transform: translate(toString("97vw"), toString("-7vw"));
+  -webkit-transform: translate(toString("85vw"), toString("-8vw"));
+          transform: translate(toString("85vw"), toString("-8vw"));
   display: inline-block;
   background: url("../assets/img/sprites/clouds.png") no-repeat;
   overflow: hidden;
@@ -971,8 +971,8 @@ body.scene1 {
 }
 
 .cloud4 {
-  -webkit-transform: translate(toString("63vw"), toString("-17vw"));
-          transform: translate(toString("63vw"), toString("-17vw"));
+  -webkit-transform: translate(toString("88vw"), toString("-5vw"));
+          transform: translate(toString("88vw"), toString("-5vw"));
   display: inline-block;
   background: url("../assets/img/sprites/clouds.png") no-repeat;
   overflow: hidden;
@@ -981,8 +981,8 @@ body.scene1 {
 }
 
 .cloud5 {
-  -webkit-transform: translate(toString("59vw"), toString("-20vw"));
-          transform: translate(toString("59vw"), toString("-20vw"));
+  -webkit-transform: translate(toString("22vw"), toString("-3vw"));
+          transform: translate(toString("22vw"), toString("-3vw"));
   display: inline-block;
   background: url("../assets/img/sprites/clouds.png") no-repeat;
   overflow: hidden;
@@ -991,8 +991,8 @@ body.scene1 {
 }
 
 .cloud6 {
-  -webkit-transform: translate(toString("67vw"), toString("-3vw"));
-          transform: translate(toString("67vw"), toString("-3vw"));
+  -webkit-transform: translate(toString("70vw"), toString("-3vw"));
+          transform: translate(toString("70vw"), toString("-3vw"));
   display: inline-block;
   background: url("../assets/img/sprites/clouds.png") no-repeat;
   overflow: hidden;
@@ -1001,8 +1001,8 @@ body.scene1 {
 }
 
 .cloud7 {
-  -webkit-transform: translate(toString("1vw"), toString("-20vw"));
-          transform: translate(toString("1vw"), toString("-20vw"));
+  -webkit-transform: translate(toString("89vw"), toString("-18vw"));
+          transform: translate(toString("89vw"), toString("-18vw"));
   display: inline-block;
   background: url("../assets/img/sprites/clouds.png") no-repeat;
   overflow: hidden;
@@ -1011,8 +1011,8 @@ body.scene1 {
 }
 
 .cloud8 {
-  -webkit-transform: translate(toString("74vw"), toString("-1vw"));
-          transform: translate(toString("74vw"), toString("-1vw"));
+  -webkit-transform: translate(toString("93vw"), toString("-15vw"));
+          transform: translate(toString("93vw"), toString("-15vw"));
   display: inline-block;
   background: url("../assets/img/sprites/clouds.png") no-repeat;
   overflow: hidden;
@@ -1021,8 +1021,8 @@ body.scene1 {
 }
 
 .cloud9 {
-  -webkit-transform: translate(toString("41vw"), toString("-6vw"));
-          transform: translate(toString("41vw"), toString("-6vw"));
+  -webkit-transform: translate(toString("11vw"), toString("0vw"));
+          transform: translate(toString("11vw"), toString("0vw"));
   display: inline-block;
   background: url("../assets/img/sprites/clouds.png") no-repeat;
   overflow: hidden;
@@ -1031,8 +1031,8 @@ body.scene1 {
 }
 
 .cloud10 {
-  -webkit-transform: translate(toString("71vw"), toString("-18vw"));
-          transform: translate(toString("71vw"), toString("-18vw"));
+  -webkit-transform: translate(toString("20vw"), toString("-3vw"));
+          transform: translate(toString("20vw"), toString("-3vw"));
   display: inline-block;
   background: url("../assets/img/sprites/clouds.png") no-repeat;
   overflow: hidden;
@@ -1041,8 +1041,8 @@ body.scene1 {
 }
 
 .cloud11 {
-  -webkit-transform: translate(toString("100vw"), toString("-5vw"));
-          transform: translate(toString("100vw"), toString("-5vw"));
+  -webkit-transform: translate(toString("72vw"), toString("-8vw"));
+          transform: translate(toString("72vw"), toString("-8vw"));
   display: inline-block;
   background: url("../assets/img/sprites/clouds.png") no-repeat;
   overflow: hidden;
@@ -1051,8 +1051,8 @@ body.scene1 {
 }
 
 .cloud12 {
-  -webkit-transform: translate(toString("91vw"), toString("-7vw"));
-          transform: translate(toString("91vw"), toString("-7vw"));
+  -webkit-transform: translate(toString("38vw"), toString("-14vw"));
+          transform: translate(toString("38vw"), toString("-14vw"));
   display: inline-block;
   background: url("../assets/img/sprites/clouds.png") no-repeat;
   overflow: hidden;
@@ -1061,8 +1061,8 @@ body.scene1 {
 }
 
 .cloud13 {
-  -webkit-transform: translate(toString("71vw"), toString("-18vw"));
-          transform: translate(toString("71vw"), toString("-18vw"));
+  -webkit-transform: translate(toString("82vw"), toString("-17vw"));
+          transform: translate(toString("82vw"), toString("-17vw"));
   display: inline-block;
   background: url("../assets/img/sprites/clouds.png") no-repeat;
   overflow: hidden;
@@ -1071,8 +1071,8 @@ body.scene1 {
 }
 
 .cloud14 {
-  -webkit-transform: translate(toString("85vw"), toString("-18vw"));
-          transform: translate(toString("85vw"), toString("-18vw"));
+  -webkit-transform: translate(toString("74vw"), toString("-17vw"));
+          transform: translate(toString("74vw"), toString("-17vw"));
   display: inline-block;
   background: url("../assets/img/sprites/clouds.png") no-repeat;
   overflow: hidden;
@@ -1628,6 +1628,11 @@ circle.fade {
   height: 50vh;
 }
 
+.comic5-row, .ritual-row {
+  height: 100vh;
+  overflow: hidden;
+}
+
 .comic1 {
   position: relative;
   display: block;
@@ -1695,7 +1700,7 @@ circle.fade {
   border-radius: 1.2rem;
   top: 2vh;
   left: 2vw;
-  min-width: 20vw;
+  min-width: 400px;
   max-width: 25vw;
 }
 
@@ -1735,11 +1740,14 @@ circle.fade {
 
 .card .wrapper {
   background-color: #fff;
-  min-height: 80vh;
+  min-height: 700px;
   position: relative;
   overflow: hidden;
+  border: 10px solid transparent;
+  -o-border-image: url("../assets/img/border-img.png") 30% round;
+  border-image: url("../assets/img/border-img.png") 30% s;
   -webkit-box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.2);
 }
 
 .card .wrapper:hover .data {
@@ -1776,7 +1784,7 @@ circle.fade {
 
 .card .text {
   padding-top: 2em;
-  font-size: 1.75rem;
+  font-size: 1.4rem;
   height: 520px;
   margin: 0;
 }
@@ -1908,26 +1916,26 @@ circle.fade {
 }
 
 #ritual {
-  width: 100vh;
+  height: 100vh;
   width: 100vw;
-  background-color: #fff;
-}
-
-#ritual #ritualPath {
-  background: #fff;
+  background-color: #000;
+  background-image: url("../assets/img/ritual1.png");
+  background-position: center;
+  background-size: initial;
+  display: block;
 }
 
 #canvas1 {
-  border: 2px solid white;
   position: absolute;
   z-index: 999;
   -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   left: 50%;
   top: 50%;
   width: 500px;
   height: 686px;
-  transform: s;
+  opacity: 1;
+  mix-blend-mode: multiply;
 }
 
 .vfx {
