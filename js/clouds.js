@@ -5,7 +5,7 @@ var is_cloud_active = new Array();
 //this is the drawing area.
 var paper   = Raphael(document.getElementById("canvas"), 950, 300); 
 //this is optional, but it's a background object for decoration.
-var skyline = paper.image("images/skyline-header.png", 2, 2, 950, 300);
+var skyline = paper.image("images/skyline-header.webp", 2, 2, 950, 300);
            
 function spawn_cloud(cloud_no){
   var randomY = Math.round(((Math.random()*180)+1) * 1000)/1000;

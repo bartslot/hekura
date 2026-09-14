@@ -1,24 +1,24 @@
 @media only screen and (min-width: 48rem) {
     body {
-        font-size:16px
+        font-size: 16px;
     }
 
     .slide-menu {
-        width: 25%
+        width: 25%;
     }
 
     .open {
-        transform: translate3d(0,0,0)
+        transform: translate3d(0,0,0);
     }
 
     .hero-headline {
         font-size: 6rem;
-        margin-bottom: 2rem
+        margin-bottom: 2rem;
     }
 
     .hero-copy {
         font-size: 1.25rem;
-        margin-bottom: 2rem
+        margin-bottom: 2rem;
     }
 
     .box,.box-first,.box-large,.box-nested,.box-row {
@@ -27,25 +27,24 @@
 
     .invisible-md {
         display: none;
-        visibility: hidden
+        visibility: hidden;
     }
 
     .visible-md {
         display: block;
-        visibility: visible
+        visibility: visible;
     }
 }
 
 .container,.container-fluid {
     margin-right: auto;
-    margin-left: auto
+    margin-left: auto;
 }
 
 .container-fluid {
     padding-right: 2rem;
-    padding-left: 2rem
+    padding-left: 2rem;
 }
-
 .row {
     box-sizing: border-box;
     display: -webkit-box;

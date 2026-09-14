@@ -8,14 +8,14 @@ function preload() {
 
 //-- usage --//
 preload(
-    "../assets/img/sprites/clouds.png",
-    "../assets/img/layer-4.png",
-    "../assets/img/layer-7.png",
+    "../assets/img/sprites/clouds.webp",
+    "../assets/img/layer-4.webp",
+    "../assets/img/layer-7.webp",
     "../assets/SVG/layer-1.svg",
     "../assets/SVG/layer-2.svg",
     "../assets/SVG/layer-3.svg",
-    "../assets/img/moon.png",
-    "../assets/img/feest1.png",
+    "../assets/img/moon.webp",
+    "../assets/img/feest1.webp",
     "../assets/img/scene1-bg.jpg",
-    "../assets/img/sprites/danceAnimations.png"
+    "../assets/img/sprites/danceAnimations.webp"
 )

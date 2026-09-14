@@ -1,5 +1,6 @@
-@import '_flex', '_stars';
 @use "sass:map";
+@use "sass:math";
+@import '_flex', '_stars';
 
 // Variables
 $live: true;
@@ -22,34 +23,30 @@ sans-serif;
     clear: both;
   }
 }
+
 @function randomNum1($min, $max) {
-    $rand: random();
-    $randomNum1: ($min + floor($rand * (($max - $min) + 1)));
-    @return $randomNum1;
-}
-@function randomNum1($min, $max) {
-    $rand: random();
-    $randomNum: ($min + floor($rand * (($max - $min) + 1)));
+    $rand: math.random();
+    $randomNum: ($min + math.floor($rand * (($max - $min) + 1)));
     @return $randomNum;
 }
 @function randomNum2($min, $max) {
-    $rand: random();
-    $randomNum: ($min + floor($rand * (($max - $min) + 1)));
+    $rand: math.random();
+    $randomNum: ($min + math.floor($rand * (($max - $min) + 1)));
     @return $randomNum;
 }
 @function randomNum3($min, $max) {
-    $rand: random();
-    $randomNum: ($min + floor($rand * (($max - $min) + 1)));
+    $rand: math.random();
+    $randomNum: ($min + math.floor($rand * (($max - $min) + 1)));
     @return $randomNum;
 }
 @function randomNum4($min, $max) {
-    $rand: random();
-    $randomNum: ($min + floor($rand * (($max - $min) + 1)));
+    $rand: math.random();
+    $randomNum: ($min + math.floor($rand * (($max - $min) + 1)));
     @return $randomNum;
 }
 @function randomNum5($min, $max) {
-    $rand: random();
-    $randomNum: ($min + floor($rand * (($max - $min) + 1)));
+    $rand: math.random();
+    $randomNum: ($min + math.floor($rand * (($max - $min) + 1)));
     @return $randomNum;
 }
 // not visible durig development
@@ -117,6 +114,18 @@ $logo: url("../assets/SVG/hekuralogo.svg");
     margin: 0;
     box-sizing: border-box;
 }
+
+.fullscreen {
+    width: 100%;
+    background: #000;
+}
+
+.image.fullscreen {
+    width: 100%;
+    min-height: 100vh;
+    background: #000;
+    opacity: 0;
+}
 body, html, .start {
     padding:0;
     margin: 0;
@@ -133,7 +142,7 @@ body, html, .start {
 }
 
 @font-face {
-    font-family: 'gab';
+    font-family: gab;
     src: url('../assets/font/gabrwffr-webfont.woff2') format('woff2'),
          url('../assets/font/gabrwffr-webfont.woff') format('woff');
     font-weight: normal;
@@ -150,7 +159,13 @@ body.scene1 {
 .overlay {
     position: absolute;
     z-index: 9999;
-    background: #040418;
+    background: #010108;
+    background-image: url('/assets/img/feest1.avif');
+    background: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100vw;
+    height: 100vh;
     top: 0;
 }
 .nightsky {
@@ -167,13 +182,14 @@ body.scene1 {
     z-index: 9999;
 }
 #clouds {
+    position: relative;
     width: 100vw;
     height: 100vh;
     background: linear-gradient(180deg, $color4 0%, $color3 20%, $color2 64%, $color1 100%);
     margin-top: -1px;
 }
 // .skyclouds {
-//     background-image: url('../assets/img/cloud1.png');
+//     background-image: url('../assets/img/cloud1.webp');
 //     width: 100vw;
 //     height: 50vh;
 // }
@@ -196,7 +212,7 @@ body.scene1 {
         $translateY: randomNum2(-20,0);
         transform: translate(toString($translateX+"vw"), toString($translateY+"vw"));
         display: inline-block; 
-        background: url('../assets/img/sprites/clouds.png') no-repeat; 
+        background: url('../assets/img/sprites/clouds.webp') no-repeat; 
         overflow: hidden; 
         text-indent: -9999px; 
         text-align: left;
@@ -233,10 +249,10 @@ body.scene1 {
     height: 930px;
 }
 .layer-4 {
-	background-image: url('../assets/img/layer-4.png');
+	background-image: url('../assets/img/layer-4.webp');
 }
 .layer-7 {
-    background-image: url('../assets/img/layer-7.png');
+    background-image: url('../assets/img/layer-7.webp');
     z-index: 9 !important;
     bottom: -1%;
 
@@ -274,17 +290,20 @@ body.scene1 {
     bottom: 0;
 }
 .moon {
-    height: 500px;
-    width: 500px;
-    transform: translate(10%, -25vh);
-    background-image: url('../assets/img/moon.png');
+    position: absolute;
+    inset: 0;
+    margin: auto; // centered without transform, so GSAP owns y for the parallax
+    height: min(500px, 80vw);
+    width: min(500px, 80vw);
+    background-image: url('../assets/img/moon.webp');
+    background-position: center;
     z-index: 0;
 }
 .layer6 {
     height: 500px;
     width: 500px;
     transform: translate(50%, -25vh);
-    background-image: url('../assets/img/feest1.png');
+    background-image: url('../assets/img/feest1.webp');
     z-index: 1;
 }
 .start {
@@ -313,19 +332,22 @@ body.scene1 {
     color: transparent;
 }
 h1,h2,h3,h4,h5, .author {
-    font-family: 'gab';
+    font-family: Bangers;
 }
-h2 {
+h2, svg text {
     text-align: center;
-    font-family: 'gab';
+    font-family: 'Bangers';
     font-size: 4em;
     margin: 0;
     position: relative;
     // top: 50%;
 }
+svg text {
+    font-size: 1.5em;
+}
 button {
     text-align: center;
-    font-family: 'gab';
+    font-family: 'Bangers';
     font-size: 2em;
     background: transparent;
     border: 0;
@@ -338,7 +360,8 @@ h2 > span {
     font-size: .3em;
 }
 .paragraph, p {   
-    font-family: ComicNeue-Light;
+    font-family: 'Comic Neue', sans-serif;
+    font-weight: 300;
     text-align: left; 
 }
 #comic path, .light path, .dark text{
@@ -350,7 +373,7 @@ h2 > span {
     fill: $black;
 }
 text {
-    font-family: 'gab';
+    font-family: 'Bangers';
 }
 
 .content-centered  {
@@ -410,10 +433,10 @@ $sizeFire: 290;
     width: 290px;
     height: 233px;
 }
-.dance-wrapper-1 { transform: translate(40%, 50%) translate3d(0px, 0px, 0px); bottom: 15%; left: 710px; }
+.dance-wrapper-1 { transform: translate(40%, 50%) translate3d(0px, 0px, 0px); bottom: 15%; left: 860px; }
 .dance-wrapper-2 { transform: translate(40%, 50%) translate3d(0px, 0px, 0px); bottom: 13%; left: 590px; }
 .dance-wrapper-3 { transform: translate(40%, 50%) translate3d(0px, 0px, 0px); bottom: 14%; left: 250px; } 
-.fire-wrapper {  z-index: 0;  bottom: 7%; left: 630px; }
+.fire-wrapper {  z-index: 0;  bottom: 0%; left: 630px; }
 .dance-wrapper-4 { transform: translate(40%, 50%) translate3d(0px, 0px, 0px); bottom: 15%; left: 471px; }
 
 
@@ -422,7 +445,7 @@ $sizeFire: 290;
     .dance-animation#{$i} {
         background-repeat:no-repeat;
         background-size: 300%;
-        background-image: url('../assets/img/sprites/danceAnimations.png');
+        background-image: url('../assets/img/sprites/danceAnimations.webp');
         background-position-y: 0;
         background-position-x: 0;
     }
@@ -488,8 +511,7 @@ circle.fade {
     right: 0;
     bottom: 0;
 }
-
-.scroll-container {  
+.scroll-container {
     position: absolute;  
     overflow: hidden;
     z-index: 10;
@@ -497,9 +519,8 @@ circle.fade {
     transform-style: preserve-3d;
     width: 100%;
 }
-
 #comic {
-    height: 700vh;
+    height: 1200vh;
     display: block;
     flex-direction: row;
     flex-wrap: wrap;
@@ -518,7 +539,7 @@ circle.fade {
         height: 50vh;
     }
     .comic1 {
-        height: 50vh;
+        height: 100vh;
         width: 100vw;
         
     }
@@ -528,37 +549,81 @@ circle.fade {
     }
     .comic3 {
         width: 50vw;
-        height: 50vh;
+        height: 80vh;
     }
     .comic4 {
         width: 100vw;
         height: 50vh;
     }
-    .comic5 {
+    .comic5-row, .comic-5 {
         width: 100vw;
-        height: 100vh;
+        height: 240vh;
+    }
+    .comic6 {
+        width: 100vw;
+    }
+    .comic7 {
+        width: 100vw;
+        height: 240vh;
     }
     
     
 }
 .flex-row {
-    height: 50vh;
+    height: 100vh;
 }
-.comic5-row, .ritual-row {
+.ritual-row {
     height: 100vh;
     overflow: hidden;
 }
-@for $i from 1 through 5{
+@for $i from 1 through 7{
     .comic#{$i} {
         position: relative;
         display: block;
         background-repeat: no-repeat;
         background-size: contain;
-        background-image: url('../assets/img/scene1-comic#{$i}.jpg');
+        background-image: url('../assets/img/scene1-comic#{$i}.webp');
         background-position: center;
     }
 }
+.comic5 {
+    background-size: cover;
+    width: 100vw;
+    height: 240vh;
+}
+.comic7 {
+    background-size: contain;
+ }
 
+.fullscreen {
+    width: 100vw;
+    height: 100vh;
+}
+.comic6 {
+    position: absolute;
+    right: 0;
+    background-position: right;
+    width: 50vw;
+    height: 100vh;
+    top: 15%;
+}
+.comic-svg1, .comic-svg2 {
+    z-index: 2;
+    min-width: 640px;
+    position: absolute;
+}
+.comic6-row .comic-svg1 {
+    top: -11%;
+    right: 2%;
+}
+.comic7-row .comic-svg1 {
+    top: 25%;
+    right: 50%;
+}
+.comic6-row .comic-svg2 {
+    right: 15%;
+    top: 25%;
+}
 // ReadIt 
 .readIt-wrapper {
     bottom: 25px;
@@ -601,7 +666,7 @@ circle.fade {
         top: 0;
         font-size: 10px;
         font-weight: 700;
-        font-family: 'gab';
+        font-family: Bangers;
         transform: translate(-50%, 0);
       }
     }
@@ -611,7 +676,7 @@ circle.fade {
         position: relative;
         overflow: hidden;
         border: 10px solid transparent;
-        border-image: url('../assets/img/border-img.png') 30% round;
+        border-image: url('../assets/img/border-img.webp') 30% round;
         box-shadow: 0 19px 38px rgba($black, 0.3), 0 15px 12px rgba($black, 0.2);
         &:hover {
             
@@ -661,12 +726,14 @@ circle.fade {
     z-index: 9;
 }
 .bubblewrapper-2 {
-    top: 28%; left: 40%;
+    top: -60px;
+    right: 320px;
 }
+
 .bubblewrapper-3 {
-    top: 28%; left: 75%;
+    top: 0%; right: 0%;
 }
-.bubblewrapper-4{ top: 25%;  left: 66%; }
+.bubblewrapper-4{ top: 0%;  right: 4%; }
 #comic5-btn { top: 70%; left: 50%; }
 
 // #bubble5{ top: 30%; left: 50%; }
@@ -675,7 +742,6 @@ circle.fade {
 // Cards
 .card {
     .wrapper {
-        background: url(https://starlotushealing.com/wp-content/uploads/2020/10/shamanic-perspective.jpg) center / cover no-repeat;
         -webkit-box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.2);
         box-shadow: 0 19px 38px rgba(0, 0, 0, .8), inset 6px 8px 320px 320px rgba(0, 0, 0, .8);
 
@@ -719,7 +785,7 @@ circle.fade {
       width: 100%;
       margin: 2em auto 1em;
       text-align: center;
-      font-family: 'gab';
+      font-family: Bangers;
       font-size: 20px;
       color: $white;
       line-height: 1;
@@ -747,7 +813,7 @@ circle.fade {
     height: 100vh;
     width: 100vw;
     background-color: $black;
-    background-image: url('../assets/img/ritual1.png');
+    background-image: url('../assets/img/ritual1.webp');
     background-position: center;
     background-size: initial;
     display: block

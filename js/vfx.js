@@ -51,8 +51,9 @@ function theRitual(jupjup) {
         console.log('Ritual gestopt');
         return;
     } else {
-        console.log('Ritual gestart');
         const canvas = document.getElementById('canvas1');
+        if (!canvas) return; // pages without the ritual scene (scene2.html)
+        console.log('Ritual gestart');
         const ctx = canvas.getContext('2d');
         ctx.globalCompositeOperation = 'multiply';
         canvas.width = 500;

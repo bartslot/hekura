@@ -1,0 +1,24 @@
+{
+  "name": "hekura",
+  "version": "1.0.0",
+  "description": "the journey of hekura, an epic about a boy trying to survive threats of the outside world",
+  "repository": {
+    "type": "git",
+    "url": "hekura"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vite": "^7.2.6"
+  },
+  "devDependencies": {
+    "sass": "^1.94.2"
+  }
+}
